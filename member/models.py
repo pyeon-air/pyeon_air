@@ -11,7 +11,7 @@ class Account(models.Model):
     updated_at = models.DateTimeField(auto_now = True, null = False)
     password_updated_at = models.DateTimeField(auto_now = True, null = False)
     role = models.CharField(max_length = 20, null = False) # master, student, teacher, assistant -> choice field 설정 나중에 고려해볼것
-    company_name = models.ForeignKey(Companylist, related_name = "account", on_delete = models.CASCADE, db_column = "company_name", null = True) # null 값 변경?
+    company_name = models.ForeignKey('member.Companylist', related_name = "account", on_delete = models.CASCADE, db_column = "company_name", null = True) # null 값 변경?
 
     def __str__(self):
         return self.account_name
