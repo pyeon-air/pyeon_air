@@ -1,4 +1,4 @@
-version: '3'
+version: "3"
 
 volumes:
   django_db_dev: {}
@@ -6,7 +6,7 @@ volumes:
 services:
   db:
     image: postgres
-    volumes: 
+    volumes:
       - django_db_dev:/var/lib/postgresql/data
     environment:
       - POSTGRES_DB=pyeon
@@ -14,7 +14,7 @@ services:
       - POSTGRES_PASSWORD=pyeonpassword
 
   django:
-    build: 
+    build:
       context: .
       dockerfile: ./compose/django/Dockerfile-dev
     environment:
@@ -36,4 +36,3 @@ services:
       "
     volumes:
       - ./:/project/
-      
