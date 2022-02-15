@@ -1,7 +1,32 @@
 from rest_framework import serializers
-from .models import In_out_log
+from .models import InOutLog, QrInfo
 
-class In_out_log_Serializer(serializers.ModelSerializer):
+
+class InOutLogSerializer(serializers.ModelSerializer):
     class Meta:
-        model = In_out_log
+        model = InOutLog
         fields = '__all__'
+
+
+# QR
+class QrInfoSerializer(serializers.ModelSerializer):
+    class Meta:
+        model = QrInfo
+        fields = '__all__'
+
+
+# 입퇴실 인원 현황
+class Serializer(serializers.ModelSerializer):
+    class Meta:
+        pass
+
+
+# 출석확인
+class Serializer(serializers.ModelSerializer):
+    class Meta:
+        pass
+
+
+    
+
+    
