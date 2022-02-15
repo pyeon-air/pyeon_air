@@ -1,7 +1,7 @@
 from django.db import models
 
 # Create your models here.
-class In_out_log(models.Model):
+class InOutLog(models.Model):
     in_out_log_id = models.AutoField(primary_key = True, unique = True, null = False)
     created_at = models.DateTimeField(auto_now_add = True, null = False)
     in_at = models.DateTimeField(auto_now = True)

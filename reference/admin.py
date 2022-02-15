@@ -1,4 +1,4 @@
 from django.contrib import admin
-from .models import Lecture_file
+from .models import LectureFile
 # Register your models here.
-admin.site.register(Lecture_file)
+admin.site.register(LectureFile)

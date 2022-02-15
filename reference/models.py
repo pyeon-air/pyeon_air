@@ -1,9 +1,9 @@
 from django.db import models
 
 # Create your models here.
-class Lecture_file(models.Model):
+class LectureFile(models.Model):
     lecture_file_id = models.AutoField(primary_key = True, unique = True, null = False)
-    lecture_id = models.ForeignKey('lecture.Lecture_info', related_name = 'lecture_file',on_delete = models.CASCADE, null = False) # fk 등록 필요 lecture_info -> lecture_id
+    lecture_id = models.ForeignKey('lecture.LectureInfo', related_name = 'lecture_file',on_delete = models.CASCADE, null = False) # fk 등록 필요 lecture_info -> lecture_id
     created_at = models.DateTimeField(auto_now_add = True, null = False)
     updated_at = models.DateTimeField(auto_now = True, null = False)
     company_name = models.ForeignKey('member.Companylist', related_name = 'lecture_file', on_delete = models.CASCADE, null = False) # fk company

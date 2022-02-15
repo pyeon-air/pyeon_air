@@ -1,10 +1,10 @@
 from django.db import models
 
 # Create your models here.
-class Assignment_create_info(models.Model):
+class AssignmentCreateInfo(models.Model):
     assignment_id = models.AutoField(primary_key = True, null = False, unique = True)
-    lecture_id = models.ForeignKey('lecture.Lecture_info', related_name = 'assignment', on_delete = models.CASCADE, db_column = 'lecture_id', null = True) # fk lecture_info 
-    account_id = models.ForeignKey('member.Account', related_name = 'assignment', on_delete = models.CASCADE, db_column = 'account_id', null = False) # fk account_id
+    lecture_id = models.ForeignKey('lecture.LectureInfo', related_name = 'assignment_lecture_id', on_delete = models.CASCADE, db_column = 'lecture_id', null = True) # fk lecture_info 
+    account_id = models.ForeignKey('member.Account', related_name = 'assignment_account_id', on_delete = models.CASCADE, db_column = 'account_id', null = True) # fk account_id
     assignment_info = models.CharField(max_length = 500)
     assignment_start_at = models.DateTimeField()
     assignment_end_at = models.DateTimeField()

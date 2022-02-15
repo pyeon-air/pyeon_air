@@ -1,7 +1,7 @@
 from django.contrib import admin
-from .models import Lecture_info,Lecture_attend_log
+from .models import LectureInfo,LectureAttendLog
 # Register your models here.
 
 
-admin.site.register(Lecture_info)
-admin.site.register(Lecture_attend_log)
+admin.site.register(LectureInfo)
+admin.site.register(LectureAttendLog)
