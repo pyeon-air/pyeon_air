@@ -1,5 +1,6 @@
 from django.contrib import admin
-from .models import In_out_log
-# Register your models here.
+from .models import InOutLog, QrInfo
 
-admin.site.register(In_out_log)
+# Register your models here.
+admin.site.register(InOutLog)
+admin.site.register(QrInfo)
