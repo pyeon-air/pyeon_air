@@ -15,7 +15,7 @@ class Notice(models.Model):
         return self.title
 
 
-class Question_answer(models.Model):
+class QuestionAnswer(models.Model):
     question_id = models.AutoField(primary_key = True, null=False, unique = True)
     created_at = models.DateTimeField(auto_now_add = True, null = False)
     updated_at = models.DateTimeField(auto_now = True, null = False)

@@ -1,17 +1,17 @@
 from rest_framework import serializers
-from .models import Account_login_log,Account,Companylist
+from .models import AccountLoginLog,Account,Companylist
 
-class Account_Serializer(serializers.ModelSerializer):
+class AccountSerializer(serializers.ModelSerializer):
     class Meta:
         model = Account
         fields = '__all__'
 
-class Account_login_log_Serializer(serializers.ModelSerializer):
+class AccountLoginLogSerializer(serializers.ModelSerializer):
     class Meta:
-        model = Account_login_log
+        model = AccountLoginLog
         fields = '__all__'
 
-class Companylist_Serializer(serializers.ModelSerializer):
+class CompanylistSerializer(serializers.ModelSerializer):
     class Meta:
         model = Companylist
         fields = '__all__'
