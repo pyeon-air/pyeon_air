@@ -40,6 +40,7 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     'drf_yasg',
     'rest_framework',
+    'channels',
     'frontend.apps.FrontendConfig',
     'member.apps.MemberConfig',
     'attendance.apps.AttendanceConfig',
@@ -47,7 +48,8 @@ INSTALLED_APPS = [
     'lecture.apps.LectureConfig',
     'reference.apps.ReferenceConfig',
     'assignment.apps.AssignmentConfig',
-    'notice.apps.NoticeConfig'
+    'notice.apps.NoticeConfig',
+    'realtimelecture.apps.RealtimelectureConfig',
 ]
 
 MIDDLEWARE = [
@@ -139,5 +141,24 @@ STATIC_URL = '/static/'
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
+ASGI_APPLICATION = 'realtimelecture.asgi.application'
+
 if DEBUG:
     ALLOWED_HOSTS += ['*', ]
+
+STATICFILES_DIRS = [os.path.join(BASE_DIR, 'static')]
+
+CHANNEL_LAYERS = {
+    "default": {
+        "BACKEND": "channels.layers.InMemoryChannelLayer"
+    }
+}
+
+# CHANNEL_LAYERS = {
+#     "default": {
+#         "BACKEND": "channels_redis.core.RedisChannelLayer",
+#         "CONFIG": {
+#             "hosts": [("127.0.0.1", 6379)],
+#         },
+#     },
+# }
