@@ -36,3 +36,12 @@ services:
       "
     volumes:
       - ./:/project/
+  react:
+    build: 
+      context: .
+      dockerfile: ./compose/react/Dockerfile-react
+    volumes:
+      - ./frontend/reactapp:/project/frontend/reactapp
+    ports:
+      - "3000:3000"
+    command: ['npm', 'start']
