@@ -4,7 +4,7 @@ from django.db import models
 class AssignmentCreateInfo(models.Model):
     assignment_id = models.AutoField(primary_key = True, null = False, unique = True)
     lecture_id = models.ForeignKey('lecture.LectureInfo', related_name = 'assignment_lecture_id', on_delete = models.CASCADE, db_column = 'lecture_id', null = True) # fk lecture_info 
-    account_id = models.ForeignKey('member.Account', related_name = 'assignment_account_id', on_delete = models.CASCADE, db_column = 'account_id', null = True) # fk account_id
+    user_id = models.ForeignKey('member.User', related_name = 'assignment_user_id', on_delete = models.CASCADE, db_column = 'user_id', null = True) # fk account_id
     assignment_info = models.CharField(max_length = 500)
     assignment_start_at = models.DateTimeField()
     assignment_end_at = models.DateTimeField()
