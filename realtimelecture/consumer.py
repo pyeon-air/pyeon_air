@@ -30,7 +30,7 @@ class RealLecture(AsyncWebsocketConsumer):
             receiver_channel_name = receive_dict['message']['receiver_channel_name']
             receive_dict['message']['receiver_channel_name'] = self.channel_name
 
-            await self.channel_layer.group_send(
+            await self.channel_layer.send(
                 receiver_channel_name,
                 {
                     'type': 'send.sdp',

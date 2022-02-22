@@ -20,8 +20,7 @@ function websocketOnMessage(event){
     var receiver_channel_name = parsedData['message']['receiver_channel_name'];
 
     if(action == 'new-peer'){
-        createOfferer(peerUsername, receiver_channel_name)
-
+        createOfferer(peerUsername, receiver_channel_name);
         return;
     }
 
@@ -88,13 +87,15 @@ btnJoin.addEventListener('click', () => {
     });
 })
 
-var localstream = new MediaStream();
+// var localstream = new MediaStream();
+// console.log(localstream);
+var localstream
 
 const constraints = {
     "video": true,
     "audio": true,
 };
-const localVideo = document.querySelector("#local-video");
+const localvideo = document.querySelector("#local-video");
 
 const btnToggleAudio = document.querySelector("#btn-toggle-audio");
 const btnToggleVideo = document.querySelector("#btn-toggle-video");
@@ -102,23 +103,24 @@ const btnToggleVideo = document.querySelector("#btn-toggle-video");
 var userMedia = navigator.mediaDevices.getUserMedia(constraints)
     .then(stream =>{
         localstream = stream;
-        localVideo.srcObject = localstream;
-        localVideo.muted  = true;
+        console.log(localstream);
+        localvideo.srcObject = localstream;
+        localvideo.muted  = true;
 
         var audioTracks = stream.getAudioTracks();
         var videoTracks = stream.getVideoTracks();
-
+        console.log(videoTracks)
         audioTracks[0].enabled = true;
         videoTracks[0].enabled = true;
 
-        btnToggleAudio.addEventListener('click', () =>{
+        btnToggleAudio.addEventListener('click', () => {
             audioTracks[0].enabled = !audioTracks[0].enabled;
             
             if (audioTracks[0].enabled){
                 btnToggleAudio.innerHTML = "Audio Mute";
-
                 return
             }
+
             btnToggleAudio.innerHTML = "Audio Unmute";
         });
 
@@ -128,7 +130,7 @@ var userMedia = navigator.mediaDevices.getUserMedia(constraints)
             if (videoTracks[0].enabled){
                 btnToggleVideo.innerHTML = "Video Off";
 
-                return
+                return;
             }
             btnToggleVideo.innerHTML = "Video On";
         });
@@ -137,8 +139,8 @@ var userMedia = navigator.mediaDevices.getUserMedia(constraints)
     })
 
     .catch(error => {
-        console.log("Er.ror accessing media devices.", error);
-    })
+        console.log("Error accessing media devices.", error);
+    });
 
     var jsonStr = JSON.stringify({
         'peer' : username,
@@ -147,6 +149,7 @@ var userMedia = navigator.mediaDevices.getUserMedia(constraints)
             
         },
     });
+    console.log(websocket);
     websocket.send(jsonStr);
 
 function sendSignal(action, message){
@@ -176,12 +179,12 @@ function createOfferer(peerUsername, receiver_channel_name){
     mapPeers[peerUsername] = [peer, dc];
 
     peer.addEventListener('iceconnectionstatechange', () =>{
-        var iceconnectionstatechange = peer.iceConnectionState;
+        var iceConnectionState = peer.iceConnectionState;
 
-        if(iceconnectionstatechange === 'failed' || iceconnectionstatechange === 'disconnected' || iceconnectionstatechange === 'closed'){
+        if(iceConnectionState === 'failed' || iceConnectionState === 'disconnected' || iceConnectionState === 'closed'){
             delete mapPeers[peerUsername];
 
-            if(iceconnectionstatechange != 'closed'){
+            if(iceConnectionState != 'closed'){
                 peer.close();
             }
 
@@ -189,7 +192,7 @@ function createOfferer(peerUsername, receiver_channel_name){
         }
     });
 
-    peer.addEventListener('icecandidate', (event)=>{
+    peer.addEventListener('icecandidate', (event) => {
         if(event.candidate){
             console.log("New ice candidate", JSON.stringify(peer.localDescription));
             return;
@@ -212,8 +215,6 @@ function createAnswerer(offer, peerUsername, receiver_channel_name){
     var peer = new RTCPeerConnection(null);
 
     addLocalTracks(peer);
-
-    dc.addEventListener('message', dcOnMessage);
 
     var remoteVideo = createVideo(peerUsername);
     setOnTrack(peer, peerUsername);
@@ -238,7 +239,7 @@ function createAnswerer(offer, peerUsername, receiver_channel_name){
             if(iceconnectionstatechange != 'closed'){
                 peer.close();
             }
-
+            
             removeVideo(remoteVideo);
         }
     });
@@ -251,20 +252,17 @@ function createAnswerer(offer, peerUsername, receiver_channel_name){
 
         sendSignal('new-answer', {
             'sdp': peer.localDescription,
-            'receiver_channel_name' :receiver_channel_name
+            'receiver_channel_name': receiver_channel_name
         });
     });
 
     peer.setRemoteDescription(offer)
         .then(() =>{
             console.log('Remote description set successfully fo %s', peerUsername);
-
             return peer.createAnswerer();
         })
         .then(a => {
             console.log('Answer created');
-
-
             peer.setLocalDescription(a);
         })
 }
@@ -287,7 +285,7 @@ function dcOnMessage(event){
 }
 
 function createVideo(peerUsername){
-    var videoContainer = document.querySelector("#vide-container");
+    var videoContainer = document.querySelector("#video-container");
 
     var remoteVideo = document.createElement('video');
 
@@ -296,7 +294,9 @@ function createVideo(peerUsername){
     remoteVideo.playsInline = true;
 
     var videoWrapper = document.createElement('div');
+
     videoContainer.appendChild(videoWrapper);
+
     videoWrapper.appendChild(remoteVideo);
 
     return remoteVideo;
@@ -308,9 +308,10 @@ function setOnTrack(peer, remoteVideo){
     remoteVideo.srcObject = remoteStream;
 
     peer.addEventListener('track', async (event) =>{
-        remoteStream.addTrack(event.track, remoteStream)
+        remoteStream.addTrack(event.track, remoteStream);
     });
 }
+
 function removeVideo(video){
     var videoWrapper = video.parentNode;
 
