@@ -2,11 +2,7 @@ from django.db import models
 from django.contrib.auth.models import AbstractUser
 # Create your models here.
 class User(AbstractUser):
-    user_id = models.AutoField(primary_key = True, unique = True, null = False)
     course_id = models.CharField(max_length = 20, null = False)
-    # email = models.CharField(max_length = 50, unique = True, null = False)
-    # account_name = models.CharField(max_length = 20, null = False)
-    # password = models.CharField(max_length = 100, null = False)
     created_at = models.DateTimeField(auto_now_add = True, null = False)
     updated_at = models.DateTimeField(auto_now = True, null = False)
     password_updated_at = models.DateTimeField(auto_now = True, null = False)
@@ -14,7 +10,7 @@ class User(AbstractUser):
     company_name = models.ForeignKey('member.Companylist', related_name = "User", on_delete = models.CASCADE, db_column = "company_name", null = True) # null 값 변경?
     in_progress = models.BooleanField(null = False, default = True)
     def __str__(self):
-        return self.account_name
+        return self.username
 
 
 class UserLoginLog(models.Model):

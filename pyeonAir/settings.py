@@ -101,6 +101,7 @@ DATABASES = {
 # Password validation
 # https://docs.djangoproject.com/en/3.2/ref/settings/#auth-password-validators
 
+
 AUTH_PASSWORD_VALIDATORS = [
     {
         'NAME': 'django.contrib.auth.password_validation.UserAttributeSimilarityValidator',
@@ -125,6 +126,11 @@ REST_FRAMEWORK = {
     ),
 }
 AUTH_USER_MODEL = 'member.User'
+
+REST_USE_JWT = True
+
+CORS_ORIGIN_WHITELIST = ['http://0.0.0.0:8000' ,'http://localhost:8000','http://localhost:3000', 'http://0.0.0.0:3000'] 
+CORS_ALLOW_CREDENTIALS = True
 
 JWT_AUTH = {
     'JWT_ENCODE_HANDLER':
@@ -156,10 +162,6 @@ JWT_AUTH = {
 }
 
 REST_USE_JWT = True
-
-CORS_ORIGIN_WHITELIST = ['http://0.0.0.0:8000' ,'http://localhost:8000','http://localhost:3000', 'http://0.0.0.0:3000'] 
-CORS_ALLOW_CREDENTIALS = True
-
 
 
 # Internationalization
