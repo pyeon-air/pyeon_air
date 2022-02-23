@@ -116,7 +116,7 @@ AUTH_PASSWORD_VALIDATORS = [
     },
 ]
 
-CORS_ORIGIN_WHITELIST = ['http://0.0.0.0:8000' ,'http://localhost:8000'] 
+CORS_ORIGIN_WHITELIST = ['http://0.0.0.0:8000' ,'http://localhost:8000','http://localhost:3000'] 
 CORS_ALLOW_CREDENTIALS = True
 
 
