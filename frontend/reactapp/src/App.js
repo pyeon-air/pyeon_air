@@ -1,24 +1,34 @@
-import logo from './logo.svg';
-import './App.css';
+import React, { useState, useRef }  from 'react';
+import Home from './pages/Home';
+import Login from './pages/Login';
+import Nav from './components/Nav';
+import Mypage from './pages/Mypage';
+// import { UserContextProvider } from "./components/context"
+
+import { BrowserRouter, Route, Routes } from "react-router-dom";
+
+
+
 
 function App() {
+  const [isLoggedIn , setIsLoggedIn ] = useState(false)
+  const isLoggedInHandle = (loggedIn) =>{
+    setIsLoggedIn(loggedIn)
+    
+  }
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <div>
+        <Nav />
+      {/* <UserContextProvider> */}
+        <Routes>
+        <Route path="/" element={<Home />} />
+        <Route path="/login" element={<Login isLoggedInHandle={isLoggedInHandle} />} />
+        <Route path="/Mypage"  element={ <Mypage />} />
+        </Routes>
+        {/* </UserContextProvider> */}
+        
+</div>
   );
 }
 
