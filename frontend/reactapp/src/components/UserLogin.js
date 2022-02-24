@@ -8,6 +8,10 @@ import styled,{css} from 'styled-components';
 import { useDispatch } from "react-redux";
 import { loginUser } from "../_action/userAction";
 // import { UserProviderContext } from "./context";
+import Cookies from 'universal-cookie';
+const cookies = new Cookies();
+axios.defaults.withCredentials = true;
+
 
 const InputId = styled.input`
 background-color: #fff;
@@ -31,88 +35,43 @@ margin:20px 0;
 `;
 
 
+
 const UserLogin = () => {
   const dispatch = useDispatch();
-  // const { setUser } = useUserContext();
-  const URL = 'http://0.0.0.0:8000/management/member_api'
+  const URL = 'http://localhost:8000/member/post_login'
   const [users , setUsers] = useState('')
   const history = useNavigate();
-  // const [id, setId] = useState('');
-  //   const [pw, setPw] = useState('');
 
     const [account ,setAccount] = useState({
-      id:"",
+      username:"",
       password:"",
     });
     const [reId, setReId] = useState('');
           const onChangeHandler = (e) => {
-            // const value = e.target.value
-            // if (e.target.name === 'account') setId(value)
-            // if (e.target.name === 'password') setPw(value)
-            // if (e.target.name === 'rememberId') setReId(value)
             setAccount({
               ...account,
               [e.target.name]: e.target.value,
             })
           }
-      //  const setIsLoggedIn =(bol)=>{
-      //    isLoggedInHandle(bol)
-      //   // isLoggedInHandle(bol)
-      //   console.log("로그인에 성공")
-      //  }
-        
+
+
           const  onClickLogin = async () => {
-            dispatch(loginUser(account)).then((res) =>{
-              const {payload} = res
-              const users = payload.find((data) => data)
-              console.log(users.email)
-              if(users.email == account.id && users.password == account.password){
-                history("/Mypage");
-              }else{
-                alert("정보가 일치하지 않습니다.");
-              }
-            })
-            console.log(account)
-            // const respon = await axios.get(URL, account).then((res) => {
-            //   const {data} = res
-            //   console.log(data)
-            //   var users = data.find((data) => data)
-            //   console.log(users)
-            //   const users1 = data.forEach(function(user){
-            //   })
-            //   try{
-            //     if(users.email == account.id && users.password ==account.password){
-            //       alert("로그인에 성공하였습니다.")
-                  
-            //     }else{
-            //       alert("아이디가 맞지않습니다")
-            //     }
-            //   }
-            //   catch(error){
-            //     alert(error)
-            //   }
-            // })
+            const response = await axios.post(URL,{
+              username: account.username,
+              password: account.password
+              // account   -----> bad request 400 
+          }).then((res)=>{
+            console.log(res)
+            const { token } = res.data;
+            cookies.set('refresh_token', token, { sameSite: 'strict' });
+          })  
         }
-        // const onSubmitAccount = async () => {
-        //   try {
-        //     const user = await fetchLogin(account);
-        //     console.log(user)
-        //     //성공하면 해당 user 아이디 패스워드값 셋팅
-        //     // setUser(user);
-        //     //성공하면 해당 url로 이동(main페이지로)
-        //     history.replace("/");
-        //   } catch (error) {
-      
-        //       //실패하면 throw new Error("") 값 출력
-        //     window.alert(error);
-        //   }
-        // };
           return (
               <>
               {      <InputId 
                      type="text" 
-                     id="id" 
-                     name="id"
+                     username="username" 
+                     name="username"
                     onChange={onChangeHandler}
                     placeholder="아이디를 입력하세요."
                      

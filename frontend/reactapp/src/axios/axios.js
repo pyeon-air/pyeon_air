@@ -13,7 +13,7 @@ export const request = async (method, url, data) => {
               
               }
         });
-        // console.log(JSON.stringify(res.data))
+
         console.log(res)
         return res.data
     } catch (err) {
