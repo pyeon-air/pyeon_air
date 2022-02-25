@@ -2,15 +2,14 @@
 name: Bug report
 about: 버그 개선에 도움이 될 수 있도록 Issue를 작성
 title: ''
-labels: ''
+labels: bug
 assignees: ''
 
 ---
 
 ## 기본정보
 
-- 본인 이름 태그
-- issue를 받는 사람 태그
+- issue를 받는 사람 태그 혹은 페이지 우측에 Assignees 지정
 
 ## 1. 발생 버그
 
