@@ -49,7 +49,8 @@ INSTALLED_APPS = [
     'lecture.apps.LectureConfig',
     'reference.apps.ReferenceConfig',
     'assignment.apps.AssignmentConfig',
-    'notice.apps.NoticeConfig'
+    'notice.apps.NoticeConfig',
+    'rest_framework_jwt'
 ]
 
 MIDDLEWARE = [
