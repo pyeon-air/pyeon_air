@@ -23,9 +23,7 @@ class QrInfo(models.Model):
     qr_id = models.AutoField(primary_key=True, unique=True, null=False)
     qr_category = models.CharField(max_length=3, choices=QR_CATEGORY, default='IN')
     start_date = models.DateTimeField(null=False)
-    start_time = models.DateTimeField(null=False)
     end_date = models.DateTimeField(null=False)
-    end_time = models.DateTimeField(null=False)
     qr_content = models.CharField(max_length=50, null=False)
     qr_notice = models.CharField(max_length=50, null=False)
 
