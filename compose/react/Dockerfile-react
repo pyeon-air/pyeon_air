@@ -3,5 +3,6 @@ FROM node
 WORKDIR /project/frontend/reactapp/
 
 COPY frontend/reactapp/package.json /project/frontend/reactapp
+COPY frontend/reactapp/package-lock.json /project/frontend/reactapp
 
 RUN npm install
