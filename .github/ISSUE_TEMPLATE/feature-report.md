@@ -2,7 +2,7 @@
 name: Feature report
 about: 기능 구현, 파악을 위한 issue를 작성
 title: ''
-labels: ''
+labels: Feature
 assignees: ''
 
 ---
@@ -11,7 +11,6 @@ assignees: ''
 
 - 제목은 '**Feature: 내용 한 줄 요약**'의 형식으로 작성
 - **issue를 받는 사람 태그** 혹은 페이지 우측에 **Assignees 지정**
-- 페이지 우측에 **기능에 맞는 라벨을 지정**
 
 ## 1. 기능 선정
 - 이야기하고 싶은 **기능에 대해 한 줄 정도의 텍스트**로 설명해주세요.
