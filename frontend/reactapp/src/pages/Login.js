@@ -1,10 +1,11 @@
-import React ,{useState} from 'react';
+import React ,{useEffect, useState} from 'react';
 import UserLogin from '../components/UserLogin'
 import AdminLogin from '../components/AdminLogin'
 import './Login.css'
 import styled,{css} from 'styled-components'
 // import {Tab, Tabs, TabList, TabPanel} from "react-tabs";
 import './resset.css'
+import Loader from '../components/Loader';
 
 
 const Tabs = styled.div`
@@ -36,7 +37,8 @@ const Content = styled.div`
   ${props => (props.active ? "" : "display:none")}
 `;
 
-const Login = () => {
+const Login = ({isLogin}) => {
+  const [loading, setLoading] = useState(false)
   // const [index, setIndex] = useState(0);
   const mangerBtn = true;
   const onSubmitHandler = async (e) => {
@@ -51,87 +53,83 @@ const Login = () => {
       }
     };
 
-    // const [tabValue , setTabValue] = useState('student')
-    // const [tabIndex , settabIndex] = useState(1)
-    // const tabHaneld = (e) =>{
-    //   const TabName = e.target.attributes.name.value
-    //    if (TabName === 'student') {
-    //      setTabValue(TabName)
-    //    }
-    //    if (TabName === 'manager') {
-    //      setTabValue(TabName)
-    //    }
-    // }
+    useEffect(()=>{
+      setTimeout(()=>{
+        setLoading(true)
+      },2000)
+    },[])
 
  
           return (
-              <>
-        <div className="login_bg">
-        <div className="login_wrap">
-            <form  style={{ display: "flex", flexDirection: "column" }}
-          onSubmit={onSubmitHandler}>
-              <div className='login_board'>
-              <div className="login_header">
-                <span>로그인
-                    <p>   
-                    </p>
-                </span>
-                <div className="main_logo">
-            </div>
-            </div>
-            
-            <div className='login_content'>
-            <Tabs>
-        <Tab onClick={handleClick} active={active === 0} id={0}>
-          수강생
-        </Tab>
-
-        <Tab onClick={handleClick} active={active === 1} id={1}>
-          운영진
-        </Tab>
-      </Tabs>
-      <>
-        <Content active={active === 0}>
-        <UserLogin />
-        </Content>
-        <Content active={active === 1}>
-        <AdminLogin />
-        </Content>
-      </>
-            {/* <Tabs selectedIndex={index} onSelect={index => setIndex(index)}>
-            <TabList>
-          <Tab>
-            <span>수강생</span>
-          </Tab>
-          <Tab>
-            <span>운영진</span>
-          </Tab>
-        </TabList>
-        <TabPanel>
-        <UserLogin/>
-        </TabPanel>
-        <TabPanel>
-        <AdminLogin />
-        </TabPanel>
-        </Tabs> */}
-              {/* <TabMenu>
-              <TabLi className='student' >
-                <TabMenuInput />
-                <TabLabel  name ='student' onClick={tabHaneld}>수강생</TabLabel>
-            </TabLi>
-            <TabLi className='manager'>
-              <TabMenuInput />
-              <TabLabel   name ='manager' onClick={tabHaneld}>운영진</TabLabel>
-            </TabLi>
-          </TabMenu>  */}
-          {/* {tabValue == 'student' ?    <UserLogin/> : <AdminLogin /> } */}
+            (loading ? 
+               <>
+              <div className="login_bg">
+              <div className="login_wrap">
+                  <form  style={{ display: "flex", flexDirection: "column" }}
+                onSubmit={onSubmitHandler}>
+                    <div className='login_board'>
+                    <div className="login_header">
+                      <span>로그인
+                          <p>   
+                          </p>
+                      </span>
+                      <div className="main_logo">
+                  </div>
+                  </div>
+                  
+                  <div className='login_content'>
+                  <Tabs>
+              <Tab onClick={handleClick} active={active === 0} id={0}>
+                수강생
+              </Tab>
+      
+              <Tab onClick={handleClick} active={active === 1} id={1}>
+                운영진
+              </Tab>
+            </Tabs>
+            <>
+              <Content active={active === 0}>
+              <UserLogin />
+              </Content>
+              <Content active={active === 1}>
+              <AdminLogin />
+              </Content>
+            </>
+                  {/* <Tabs selectedIndex={index} onSelect={index => setIndex(index)}>
+                  <TabList>
+                <Tab>
+                  <span>수강생</span>
+                </Tab>
+                <Tab>
+                  <span>운영진</span>
+                </Tab>
+              </TabList>
+              <TabPanel>
+              <UserLogin/>
+              </TabPanel>
+              <TabPanel>
+              <AdminLogin />
+              </TabPanel>
+              </Tabs> */}
+                    {/* <TabMenu>
+                    <TabLi className='student' >
+                      <TabMenuInput />
+                      <TabLabel  name ='student' onClick={tabHaneld}>수강생</TabLabel>
+                  </TabLi>
+                  <TabLi className='manager'>
+                    <TabMenuInput />
+                    <TabLabel   name ='manager' onClick={tabHaneld}>운영진</TabLabel>
+                  </TabLi>
+                </TabMenu>  */}
+                {/* {tabValue == 'student' ?    <UserLogin/> : <AdminLogin /> } */}
+                    </div>
+                    </div>
+                  </form>    
+                </div>
               </div>
-              </div>
-            </form>    
-          </div>
-        </div>
-              </>
-
+                    </> :
+                     <Loader type="spin" color="RGB 값"/>
+            )
           )
     };
 

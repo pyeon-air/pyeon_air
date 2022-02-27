@@ -15,4 +15,9 @@ a:hover, a:active {text-decoration: none; color:#fff;}
    
 }
 
+.logout{
+    background: none;
+    color: #000;
+}
+
 

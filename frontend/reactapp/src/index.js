@@ -15,6 +15,7 @@ const createStoreWidthMiddleware = applyMiddleware(
 
 
 ReactDOM.render(
+  // Redux 할때 필요 
   <Provider store={createStoreWidthMiddleware( 
     window.__REDUX_DEVTOOLS_EXTENSION__ &&
     window.__REDUX_DEVTOOLS_EXTENSION__()) }>

@@ -1,13 +1,12 @@
 import React ,{ useState, useEffect} from 'react';
-// import { authUserApi } from '../api/UserApi';
+// import { useDispatch } from "react-redux";
 import axios from 'axios';
 import './LoginComponent.css';
-import './context'
+import { refreshToken } from './refreshToken';
 import { useNavigate } from 'react-router';
 import styled,{css} from 'styled-components';
-import { useDispatch } from "react-redux";
 import { loginUser } from "../_action/userAction";
-// import { UserProviderContext } from "./context";
+import {getCookie, setCookie} from '../components/Cookie';
 import Cookies from 'universal-cookie';
 const cookies = new Cookies();
 axios.defaults.withCredentials = true;
@@ -33,14 +32,24 @@ outline: 0;
 border-radius: 25px;   
 margin:20px 0;
 `;
-
-
-
 const UserLogin = () => {
-  const dispatch = useDispatch();
+  const [isLoggedIn ,setIsLoggedIn] = useState(false)
+  const history = useNavigate();
+  const [cookies ,setCookies] = useState(getCookie("refresh_token"))
+  useEffect(() =>{
+      if(cookies){
+        setIsLoggedIn(true);
+        history('/Mypage')
+     }else{
+ 
+     }
+  },[cookies])
+
+
+  // const dispatch = useDispatch();  redux 할때 사용
   const URL = 'http://localhost:8000/member/post_login'
   const [users , setUsers] = useState('')
-  const history = useNavigate();
+
 
     const [account ,setAccount] = useState({
       username:"",
@@ -61,13 +70,20 @@ const UserLogin = () => {
               password: account.password
               // account   -----> bad request 400 
           }).then((res)=>{
-            console.log(res)
+            setIsLoggedIn(true)
             const { token } = res.data;
-            cookies.set('refresh_token', token, { sameSite: 'strict' });
-          })  
+            setCookie('refresh_token', token, { sameSite: 'strict',path  : '/' } );
+            axios.defaults.headers.common['Authorization'] = 'Bearer ' + token;
+            history('/Mypage')
+          }).catch(error=>{
+            console.log(error.response)
+            setIsLoggedIn(false)
+          })
+          
         }
+
           return (
-              <>
+            <>
               {      <InputId 
                      type="text" 
                      username="username" 
