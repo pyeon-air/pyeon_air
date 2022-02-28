@@ -15,7 +15,7 @@ from django.http import JsonResponse
 
 @permission_classes([AllowAny])
 class UserLogInAPI(APIView):
-    @swagger_auto_schema(tags=['로그인을 진행합니다.'], request_body=serializers.UserLoginSerializer)
+    @swagger_auto_schema(tags=['로그인 관련 API'], request_body=serializers.UserLoginSerializer)
     # @transaction.atomic
     # https://brownbears.tistory.com/573 확인해보기
     def post(self, request, *args, **kwargs):
@@ -27,7 +27,6 @@ class UserLogInAPI(APIView):
 
         serializer.is_valid(raise_exception=True)
         user = serializer.validated_data
-        print(user)
         if user['username'] == "None":
             return Response(
                 {"message": "fail"}, status=status.HTTP_401_UNAUTHORIZED

@@ -6,7 +6,13 @@ class User(AbstractUser):
     created_at = models.DateTimeField(auto_now_add = True, null = False)
     updated_at = models.DateTimeField(auto_now = True, null = False)
     password_updated_at = models.DateTimeField(auto_now = True, null = False)
-    role = models.CharField(max_length = 20, null = False) # master, student, teacher, assistant -> choice field 설정 나중에 고려해볼것
+    ROLE_CHOICES = (
+        ('MA', 'Master'),
+        ('ST', 'Student'),
+        ('TE', 'Teacher'),
+        ('AS', 'Assistant')
+    )
+    role = models.CharField(max_length = 2, choices = ROLE_CHOICES, null = False) # master, student, teacher, assistant -> choice field 설정 나중에 고려해볼것
     company_name = models.ForeignKey('member.Companylist', related_name = "User", on_delete = models.CASCADE, db_column = "company_name", null = True) # null 값 변경?
     in_progress = models.BooleanField(null = False, default = True)
     def __str__(self):
