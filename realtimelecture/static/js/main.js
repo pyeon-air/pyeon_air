@@ -22,8 +22,6 @@ function webSocketOnMessage(event){
     var receiver_channel_name = parsedData['message']['receiver_channel_name'];
 
     if(action == 'new-peer'){
-        //TODO
-        console.log('channle:',receiver_channel_name);
         createOfferer(peerUsername, receiver_channel_name);
 
         return;
@@ -32,8 +30,7 @@ function webSocketOnMessage(event){
     if(action == 'new-offer'){
         
         var offer = parsedData['message']['sdp'];
-        //TODO
-        console.log('offer:', offer);
+
         createAnswerer(offer, peerUsername, receiver_channel_name);
 
         return;
@@ -42,8 +39,6 @@ function webSocketOnMessage(event){
     if(action == 'new-answer'){
       
         var answer = parsedData['message']['sdp'];
-        //TODO
-        console.log('answer:', answer);
         var peer = mapPeers[peerUsername][0];
 
         peer.setRemoteDescription(answer);
@@ -150,6 +145,7 @@ var userMedia = navigator.mediaDevices.getUserMedia(constraints)
         console.log('Error accessing media devices,', error);
     });
 
+var btnSendMsg
 
 
 function sendSignal(action, message){
