@@ -14,10 +14,10 @@ const Mypage = () => {
         setLoading(true)
       },1000)
      if(cookies){
-        console.log("로그인성공")
-
+        history('/mypage')
     }else{
-        history('/login')
+        history('/Login')
+    
     }
  },[cookies])
     return (

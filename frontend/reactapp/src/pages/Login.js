@@ -52,11 +52,10 @@ const Login = ({isLogin}) => {
         setActive(index);
       }
     };
-
     useEffect(()=>{
       setTimeout(()=>{
         setLoading(true)
-      },2000)
+      },1000)
     },[])
 
  

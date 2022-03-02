@@ -1,0 +1,11 @@
+.logout{
+  position: absolute;
+  z-index: 9999999;
+  right: 5%;
+  top: 5%;
+  
+  }
+.logout h1{
+cursor: pointer; 
+
+}

@@ -42,11 +42,6 @@ const AdminLogin = ({ isLoggedInHandle}) => {
        
         
           const  onClickLogin = async () => {
-   
-            // localStorage.getItem('username')
-            // console.log('click login')
-            // console.log('ID : ', id)
-            // console.log('PW : ', pw)
           const respon =  await  axios.get("/management/member_api", {
                 headers: {
                     'Content-Type': 'application/json',
