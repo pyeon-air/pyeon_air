@@ -4,6 +4,8 @@ import {getCookie} from '../components/Cookie';
 import { useNavigate } from 'react-router';
 import './Home.css';
 import Loader from '../components/Loader';
+import Header from '../components/Header';
+import './Mypage.css'
 
 const Mypage = () => {
     const [loading, setLoading] = useState(false)
@@ -21,13 +23,13 @@ const Mypage = () => {
     }
  },[cookies])
     return (
-        (loading ? <>
-            <div className='header'>
-           <h1>Mypage</h1>
-       </div>
-       <h2>환영합니다.</h2>
-        </> :  <Loader type="spin" color="RGB 값" /> )
-       
+    
+
+        (loading ? 
+        <div className='mypage'>
+             <Header />
+        </div>
+        :  <Loader type="spin" color="RGB 값" /> )
     );
 };
 

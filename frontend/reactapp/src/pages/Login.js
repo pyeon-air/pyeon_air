@@ -3,7 +3,6 @@ import UserLogin from '../components/UserLogin'
 import AdminLogin from '../components/AdminLogin'
 import './Login.css'
 import styled,{css} from 'styled-components'
-// import {Tab, Tabs, TabList, TabPanel} from "react-tabs";
 import './resset.css'
 import Loader from '../components/Loader';
 

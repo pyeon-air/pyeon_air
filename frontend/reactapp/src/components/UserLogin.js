@@ -2,13 +2,13 @@ import React ,{ useState, useEffect ,useRef} from 'react';
 // import { useDispatch } from "react-redux";
 import axios from 'axios';
 import './LoginComponent.css';
-import { refreshToken } from './refreshToken';
 import { useNavigate } from 'react-router';
 import styled,{css} from 'styled-components';
-import { loginUser } from "../_action/userAction";
 import {getCookie, setCookie ,removeCookie} from '../components/Cookie';
 import Cookies from 'universal-cookie';
 const JWT_EXPIRY_TIME = 24 * 3600 * 1000; // 만료 시간 (24시간 밀리 초로 표현)
+
+
 const cookies = new Cookies();
 axios.defaults.withCredentials = true;
 
@@ -54,7 +54,6 @@ const UserLogin = () => {
       userInput.current.value = reId
       setAccount({username:reId})
       // setInputChecked(true)
-  
   }else{
 
   }
@@ -67,16 +66,16 @@ const UserLogin = () => {
       history('/login')
      }
   },[])
-  // const dispatch = useDispatch();  redux 할때 사용
   const URL = 'http://localhost:8000/member/post_login'
           const onRememberHandler = (e) =>{
             setInputChecked(!inputChecked)
           }
           const onChangeHandler = (e) =>{
-               const { value, name } = e.target; 
+               const { value, name } = e.target; // e.target.value  ,  e.target.name
+              //  console.log(e.target.value)
                setAccount({
                 ...account,
-                [name]:value,
+                [name]:value, //  Computed property names 문법
               })
           }
 
@@ -84,7 +83,6 @@ const UserLogin = () => {
             const response = await axios.post(URL,{
               username: account.username,
               password: account.password
-              // account   -----> bad request 400 
           }).then((res)=>{
             setIsLoggedIn(true)
             const { token } = res.data;
