@@ -37,23 +37,22 @@ const UserLogin = () => {
   const history = useNavigate();
   const [isLoggedIn ,setIsLoggedIn] = useState(false)
   const [cookies ,setCookies] = useState(getCookie("refresh_token"))
-  const [reId ,setReId] = useState(getCookie("user_id"))
+  const [rememerId ,setRememerId] = useState(getCookie("user_id"))
   const [inputChecked, setInputChecked] = useState(false)
-  const [account ,setAccount] = useState({
-    username:"",
-    password:"",
-    rememberId : false,
-    token:""
-  });
-  const userInput = useRef(); // username input 
+    const [account ,setAccount] = useState({
+      username:"",
+      password:"",
+      rememberId : false,
+      token:""
+    });
 
- 
+  const userInput = useRef(); // username input 
   useEffect(() =>{
     console.log(cookies)
-    if(reId){
-      userInput.current.value = reId
-      setAccount({username:reId})
-      // setInputChecked(true)
+    if(rememerId){
+      userInput.current.value = rememerId
+      setAccount({username:rememerId})
+      setInputChecked(true)
   }else{
 
   }
@@ -86,21 +85,23 @@ const UserLogin = () => {
           }).then((res)=>{
             setIsLoggedIn(true)
             const { token } = res.data;
-            setCookie('refresh_token', token, { sameSite: 'strict',path  : '/' } );
+            const cookieDate = new Date()
+            cookieDate.setDate(cookieDate.getDate() + 1); // 하루동안 유지
+            setCookie('refresh_token', token, { sameSite: 'strict',path  : '/', expires: cookieDate} );
             axios.defaults.headers.common['Authorization'] = 'Bearer ' + token;
             history('/Mypage')
             if(inputChecked){
-              if(reId){
+              if(rememerId){
                 getCookie('user_id')
               }else{
                 setCookie('user_id' ,res.data.user,{} );
               }
+
             }else{
               setInputChecked(false)
               removeCookie("user_id")
             }
           }).catch(error=>{
-            console.log(error.response)
             setIsLoggedIn(false)
           })
         }

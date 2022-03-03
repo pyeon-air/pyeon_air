@@ -4,9 +4,9 @@ import {getCookie} from '../components/Cookie';
 import { useNavigate } from 'react-router';
 import './Home.css';
 import Loader from '../components/Loader';
-import Header from '../components/Header';
+import Header from '../components/header/Header';
 import './Mypage.css'
-
+import Gnb from '../components/gnb/gnb';
 const Mypage = () => {
     const [loading, setLoading] = useState(false)
     const history = useNavigate();
@@ -23,11 +23,18 @@ const Mypage = () => {
     }
  },[cookies])
     return (
-    
-
         (loading ? 
         <div className='mypage'>
-             <Header />
+            <div className='aside'>
+                <Gnb />
+            </div>
+            <div className='content'>
+                <Header />
+             <div>
+
+             </div>
+            </div>
+    
         </div>
         :  <Loader type="spin" color="RGB 값" /> )
     );

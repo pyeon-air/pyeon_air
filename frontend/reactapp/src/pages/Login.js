@@ -36,10 +36,8 @@ const Content = styled.div`
   ${props => (props.active ? "" : "display:none")}
 `;
 
-const Login = ({isLogin}) => {
+const Login = () => {
   const [loading, setLoading] = useState(false)
-  // const [index, setIndex] = useState(0);
-  const mangerBtn = true;
   const onSubmitHandler = async (e) => {
     e.preventDefault();
 
@@ -56,7 +54,6 @@ const Login = ({isLogin}) => {
         setLoading(true)
       },1000)
     },[])
-
  
           return (
             (loading ? 

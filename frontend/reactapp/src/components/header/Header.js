@@ -1,16 +1,17 @@
 import React from 'react'
 import styled,{css} from 'styled-components';
-
+import '../../font.css'
 
 const HeaderWrap = styled.div`
 background-color: #ffffff;
 border-radius: 40px;
-width: 1200px;
+width: calc(1200px - 200px);
 height: 80px;
+box-shadow: 0px 5px 4.75px 0.25px rgba(0, 0, 0, 0.05);
 `;
 const HeaderTitle = styled.h1`
 font-size:30px;
-font-family: Noto Sans;
+font-family: 'Noto Sans KR', 'sans-serif';
 `;
 const HeaderContainer = styled.div`
 display:flex;
@@ -24,13 +25,11 @@ display:flex;
 `;
 const IconLI = styled.li`
 margin-right:10px;
-cursor: pointer;
+cursor: pointer;ddd
 
 `;
 
 const Header = (props) => {
-    
-
   return (
     <>
     <HeaderWrap>

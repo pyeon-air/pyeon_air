@@ -6,4 +6,9 @@ body html{
     width: 100vw;
     height: 100vh;
     background-color: #f1f5f7;
+    display: flex;
+}
+
+.aside{
+    width: 250px;
 }
