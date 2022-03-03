@@ -1,12 +1,3 @@
----
-name: Pull Request Report
-about: 코드 검토, 병합에 도움이 될 수 있도록 작성
-title: ''
-labels: ''
-assignees: ''
-
----
-
 ## 기본정보
 - 제목은 **[JIRA 이슈 키 넘버][날짜6자리] PR요청** 형식으로 작성
 - **issue를 받는 사람 태그** 혹은 페이지 우측에 **Assignees 지정**
