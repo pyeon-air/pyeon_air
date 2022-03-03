@@ -145,8 +145,30 @@ var userMedia = navigator.mediaDevices.getUserMedia(constraints)
         console.log('Error accessing media devices,', error);
     });
 
-var btnSendMsg
+var btnSendMsg = document.querySelector("#btn-send-msg");
+var messageList = document.querySelector("#message-list");
+var messageInput = document.querySelector("#msg");
 
+btnSendMsg.addEventListener('click', sendMsgOncClick);
+
+function sendMsgOncClick(){
+    var message = messageInput.value;
+
+    var li = document.createElement('li');
+    li.appendChild(document.createTextNode('Me: ' + message ));
+    messageList.appendChild(li);
+
+    var datachannels = getDataChannels();
+
+    message = username + ":" + message;
+
+    for(index in datachannels){
+        datachannels[index].send(message);
+    }
+
+    messageInput.value = '';
+
+}
 
 function sendSignal(action, message){
     var jsonStr = JSON.stringify({
@@ -315,4 +337,16 @@ function removeVideo(video){
     var videoWrapper = video.parentNode;
 
     videoWrapper.parentNode.removeChild(videoWrapper);
+}
+
+function getDataChannels(){
+    var datachannels = [];
+
+    for(peerUsername in mapPeers){
+        var datachannel = mapPeers[peerUsername][1];
+
+        datachannels.push(datachannel);
+    }
+
+    return datachannels;
 }

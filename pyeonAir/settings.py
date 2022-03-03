@@ -26,7 +26,7 @@ SECRET_KEY = 'django-insecure-#e8qi_4o9hsz*!9$#mg#_235-1k4u$%zrtrlb4!v(f)3a7=b#k
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = bool(os.environ.get('DJANGO_DEBUG', True))
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['*']
 
 
 # Application definition
@@ -144,7 +144,10 @@ DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 ASGI_APPLICATION = 'realtimelecture.asgi.application'
 
 if DEBUG:
-    ALLOWED_HOSTS += ['*', ]
+    ALLOWED_HOSTS += ['*', ]그거는 그냥 마이그레이션만 초기화해주느거지 ?
+￼
+@심동민에 메시지 보내기
+
 
 STATICFILES_DIRS = [os.path.join(BASE_DIR, 'static')]
 
