@@ -6,31 +6,35 @@ export default class SimpleSlider extends Component {
     render() {
       const settings = {
         dots: true,
-        infinite: true,
+        // infinite: true,
+        fade: true,
         speed: 500,
         slidesToShow: 1,
         slidesToScroll: 1
       };
       return (
-        <div>
+        <div className="main_header_slider_area">
           <Slider {...settings}>
-            <div className="main_header_wrap">
-              <h3>1</h3>
+            <div className="main_header_slider_cntnt">
+              <div>
+                <div>버튼영역1</div>
+                <div>글영역1</div>
+              </div>
+              <img src="/images/main/main_header.png"/>
             </div>
-            <div className="main_header_wrap">
-              <h3>2</h3>
+            <div className="main_header_slider_cntnt">
+              <div>
+                <div>버튼영역2</div>
+                <div>글영역2</div>
+              </div>
+              <img src="/images/main/main_header.png"/>
             </div>
-            <div className="main_header_wrap">
-              <h3>3</h3>
-            </div>
-            <div className="main_header_wrap">
-              <h3>4</h3>
-            </div>
-            <div className="main_header_wrap">
-              <h3>5</h3>
-            </div>
-            <div className="main_header_wrap">
-              <h3>6</h3>
+            <div className="main_header_slider_cntnt">
+              <div>
+                <div>버튼영역3</div>
+                <div>글영역3</div>
+              </div>
+              <img src="/images/main/main_header.png"/>
             </div>
           </Slider>
         </div>

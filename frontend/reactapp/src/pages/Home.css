@@ -43,6 +43,7 @@ div{
     background-size: 1200px;
     background-position: center;
     background-repeat: no-repeat;
+    margin-top:50px;
 }
 
 .main_team_wrap{
@@ -52,31 +53,31 @@ div{
 }
 
 .main_header_logo{
+    position:absolute;
     width: 120px;
     height: 50px;
     background-image: url(../../public/main_logo.png);
     background-size: 100px;
     background-repeat: no-repeat;
     margin:10px 0 10px 200px;
+    z-index: 1;
 }
 
-.main_header_login{
-    float:right;
+.main_header_login {
+    position:absolute;
+    /* position:relative; */
+    /* float:right; */
+    right: 0px;
+    top: 15px;
     width:100px;
     height:30px;
     text-align: center;
     border-radius: 1rem;
     line-height: 25px;
-    /* margin-right:100px; */
-    /* height:100px; */
-}
-
-.main_header_login {
-    position:relative;
-    bottom:60px;
     border: 1px solid white !important;
     color:white;
     margin:10px 200px 10px 0;
+    z-index: 1;
 }
 
 
@@ -226,6 +227,7 @@ div{
     /* margin: 0 10px 0 10px; */
     display:flex;
     background-color:lightgray;
+    text-align:center;
 }
 
 .main_footer_logo{
@@ -238,7 +240,7 @@ div{
 }
 
 .main_footer_copyright{
-    width:900px;
+    width:800px;
     line-height:100px;
     text-align: center;
 }

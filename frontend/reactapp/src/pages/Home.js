@@ -74,6 +74,7 @@ const Home = () => {
             </div>
         </div>
         <div className='main_team_wrap'>
+            {/* <Slider /> */}
         </div>
         <div className='main_footer_wrap'>
             <div className='main_footer_logo'></div>
