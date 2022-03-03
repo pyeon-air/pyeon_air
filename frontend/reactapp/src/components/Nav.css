@@ -1,7 +1,7 @@
 .nav{
     position: absolute;
-    right: 50px;
-    top: 50px;
+    top: 22px;
+    right: 200px;
     z-index: 99;
  
 }
@@ -19,5 +19,4 @@ a:hover, a:active {text-decoration: none; color:#fff;}
     background: none;
     color: #000;
 }
-
 

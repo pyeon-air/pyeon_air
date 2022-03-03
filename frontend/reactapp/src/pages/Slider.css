@@ -1,0 +1,23 @@
+
+header{
+background-color: #fff;
+}
+
+h2{
+    margin-top: 40px;
+    padding: 30px;
+}
+.slider_content{
+    border: 1px solid black !important;
+    height:200px;
+}
+
+.main_header_wrap{
+    /* width: 1500px; */
+    height:500px;
+    display:inline-block;
+    background-image: url(../../public/images/main/main_header.png);
+    background-size: 700px;
+    background-position: right;
+    background-repeat: no-repeat;
+}
