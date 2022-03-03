@@ -21,7 +21,7 @@ def create_qrcode(company, qr_text, file_name, qr_size=10):
     os.makedirs(img_path, exist_ok=True)
 
     img = qr.make_image(fill_color='black', back_color='white')
-    img.save(os.path.join(img_path, file_name))
+    img.save(os.path.join(img_path, file_name+'.jpg'))
 
     return img_path
 

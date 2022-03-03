@@ -27,17 +27,19 @@ class QrListCreateView(ListModelMixin, CreateModelMixin, generics.GenericAPIView
         """
         QR 코드를 생성하는 API입니다.
         """
-        qr_content = request.data['start_date'] + request.data['end_date']
+        start_date, start_time = request.data['start_date'].split('T')
+        end_date, end_time = request.data['end_date'].split('T')
+        qr_content = f'{start_date}&{end_date}'
+
 
         # create qr    
+        '''
+        qr_text는 랜덤 해쉬값이 들어가야 할것 같음
+        '''
         qr_link = create_qrcode(company='temp', qr_text=qr_content, file_name=qr_content, qr_size=10)
 
-        request.data['qr_content'] = qr_content
-        request.data['qr_link'] = qr_link
-
+        request.data['qr_content'], request.data['qr_link'] = qr_content, qr_link
         print(request.data['qr_content'])
-        print(request.data['qr_link'])
-
         return self.create(request, *args, **kwargs)
 
     

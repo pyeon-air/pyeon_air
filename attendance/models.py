@@ -26,7 +26,7 @@ class QrInfo(models.Model):
     end_date = models.DateTimeField(null=False)
     qr_content = models.CharField(max_length=50, null=False)
     qr_notice = models.CharField(max_length=50, null=False)
-    qr_link = models.CharField(max_length=200, null=False)
+    qr_link = models.CharField(max_length=200, null=False, default='')
 
     class Meta:
         ordering = []

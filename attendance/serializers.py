@@ -5,7 +5,8 @@ from .models import InOutLog, QrInfo
 class QrInfoSerializer(serializers.ModelSerializer):
     class Meta:
         model = QrInfo
-        exclude = ['qr_content', 'qr_link']
+        fields = '__all__'
+        # exclude = ['qr_content', 'qr_link']
 
 
 class InOutLogSerializer(serializers.ModelSerializer):
