@@ -6,7 +6,7 @@ from rest_framework.routers import DefaultRouter
 router = DefaultRouter()
 router.register(r'student_management', views.StudentManagement)
 
-
 urlpatterns = [
-    path("", include(router.urls))
+    path('get_sort', views.StudentManagementSort.as_view()),
+    path("", include(router.urls)),
 ]

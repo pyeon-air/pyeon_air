@@ -12,12 +12,16 @@ class User(AbstractUser):
         ('TE', 'Teacher'),
         ('AS', 'Assistant')
     )
-    role = models.CharField(max_length = 2, choices = ROLE_CHOICES, null = False) # master, student, teacher, assistant -> choice field 설정 나중에 고려해볼것
+    role = models.CharField(max_length = 2, choices = ROLE_CHOICES, null = False) 
     company_name = models.ForeignKey('member.Companylist', related_name = "User", on_delete = models.CASCADE, db_column = "company_name", null = True) # null 값 변경?
+    address = models.CharField(max_length = 100, null = True)
+    birth = models.DateTimeField(null = True)
+    contact = models.IntegerField(null = True)
+    other = models.CharField(max_length = 500, null = True)
     in_progress = models.BooleanField(null = False, default = True)
+
     def __str__(self):
         return self.username
-
 
 class UserLoginLog(models.Model):
     login_log_id = models.AutoField(primary_key = True, null = False, unique = True)
