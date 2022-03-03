@@ -8,12 +8,9 @@ import { BrowserRouter } from 'react-router-dom';
 import App from './App';
 
 ReactDOM.render(
-  // Redux 할때 필요 
- 
   <BrowserRouter>
   <App />
-</BrowserRouter>
-,
+</BrowserRouter>,
   document.getElementById('root')
 );
 
