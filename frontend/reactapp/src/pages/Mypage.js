@@ -6,7 +6,8 @@ import './Home.css';
 import Loader from '../components/Loader';
 import Header from '../components/header/Header';
 import './Mypage.css'
-import Gnb from '../components/gnb/gnb';
+// import Gnb from '../components/gnb/gnb';
+import Accordianwrap from '../components/gnb/Accordianwrap'
 const Mypage = () => {
     const [loading, setLoading] = useState(false)
     const history = useNavigate();
@@ -24,9 +25,9 @@ const Mypage = () => {
  },[cookies])
     return (
         (loading ? 
-        <div className='mypage'>
+        <div className='mypage'>    
             <div className='aside'>
-                <Gnb />
+
             </div>
             <div className='content'>
                 <Header />

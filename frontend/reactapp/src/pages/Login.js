@@ -12,9 +12,9 @@ const Tabs = styled.div`
   background: #fff;
   font-family: Open Sans;
   width:300px;
-height:48px;
+  height:48px;
   display:flex;
-margin:20px auto;
+  margin:20px auto;
 `;
 
 const Tab = styled.div`
