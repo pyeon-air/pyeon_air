@@ -3,7 +3,6 @@ import UserLogin from '../components/UserLogin'
 import AdminLogin from '../components/AdminLogin'
 import './Login.css'
 import styled,{css} from 'styled-components'
-// import {Tab, Tabs, TabList, TabPanel} from "react-tabs";
 import './resset.css'
 import Loader from '../components/Loader';
 
@@ -13,9 +12,9 @@ const Tabs = styled.div`
   background: #fff;
   font-family: Open Sans;
   width:300px;
-height:48px;
+  height:48px;
   display:flex;
-margin:20px auto;
+  margin:20px auto;
 `;
 
 const Tab = styled.div`
@@ -37,10 +36,8 @@ const Content = styled.div`
   ${props => (props.active ? "" : "display:none")}
 `;
 
-const Login = ({isLogin}) => {
+const Login = () => {
   const [loading, setLoading] = useState(false)
-  // const [index, setIndex] = useState(0);
-  const mangerBtn = true;
   const onSubmitHandler = async (e) => {
     e.preventDefault();
 
@@ -57,7 +54,6 @@ const Login = ({isLogin}) => {
         setLoading(true)
       },1000)
     },[])
-
  
           return (
             (loading ? 

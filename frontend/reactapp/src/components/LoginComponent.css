@@ -103,9 +103,7 @@ margin-left: 20px;
     background-repeat: no-repeat;
 
 }
-/* input[type="checkbox"] + label span {
-    position: absolute; top: 0; left:0px; display: block; font-weight: bold;}
-     */
+
 .main_logo img{
     width: 100%;
 }
@@ -168,7 +166,8 @@ font-size: 14px;
     display: inline-block;
     font-size: 14px;
     line-height: 18px;
-    margin-top: -4px;
+    font-family: 'Noto Sans KR', 'sans-serif';
+ 
 }
 button{
 width: 100%;

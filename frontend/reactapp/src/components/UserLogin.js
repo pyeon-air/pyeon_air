@@ -2,13 +2,13 @@ import React ,{ useState, useEffect ,useRef} from 'react';
 // import { useDispatch } from "react-redux";
 import axios from 'axios';
 import './LoginComponent.css';
-import { refreshToken } from './refreshToken';
 import { useNavigate } from 'react-router';
 import styled,{css} from 'styled-components';
-import { loginUser } from "../_action/userAction";
 import {getCookie, setCookie ,removeCookie} from '../components/Cookie';
 import Cookies from 'universal-cookie';
 const JWT_EXPIRY_TIME = 24 * 3600 * 1000; // 만료 시간 (24시간 밀리 초로 표현)
+
+
 const cookies = new Cookies();
 axios.defaults.withCredentials = true;
 
@@ -37,24 +37,22 @@ const UserLogin = () => {
   const history = useNavigate();
   const [isLoggedIn ,setIsLoggedIn] = useState(false)
   const [cookies ,setCookies] = useState(getCookie("refresh_token"))
-  const [reId ,setReId] = useState(getCookie("user_id"))
+  const [rememerId ,setRememerId] = useState(getCookie("user_id"))
   const [inputChecked, setInputChecked] = useState(false)
-  const [account ,setAccount] = useState({
-    username:"",
-    password:"",
-    rememberId : false,
-    token:""
-  });
-  const userInput = useRef(); // username input 
+    const [account ,setAccount] = useState({
+      username:"",
+      password:"",
+      rememberId : false,
+      token:""
+    });
 
- 
+  const userInput = useRef(); // username input 
   useEffect(() =>{
     console.log(cookies)
-    if(reId){
-      userInput.current.value = reId
-      setAccount({username:reId})
-      // setInputChecked(true)
-  
+    if(rememerId){
+      userInput.current.value = rememerId
+      setAccount({username:rememerId})
+      setInputChecked(true)
   }else{
 
   }
@@ -67,16 +65,16 @@ const UserLogin = () => {
       history('/login')
      }
   },[])
-  // const dispatch = useDispatch();  redux 할때 사용
   const URL = 'http://localhost:8000/member/post_login'
           const onRememberHandler = (e) =>{
             setInputChecked(!inputChecked)
           }
           const onChangeHandler = (e) =>{
-               const { value, name } = e.target; 
+               const { value, name } = e.target; // e.target.value  ,  e.target.name
+              //  console.log(e.target.value)
                setAccount({
                 ...account,
-                [name]:value,
+                [name]:value, //  Computed property names 문법
               })
           }
 
@@ -84,25 +82,26 @@ const UserLogin = () => {
             const response = await axios.post(URL,{
               username: account.username,
               password: account.password
-              // account   -----> bad request 400 
           }).then((res)=>{
             setIsLoggedIn(true)
             const { token } = res.data;
-            setCookie('refresh_token', token, { sameSite: 'strict',path  : '/' } );
+            const cookieDate = new Date()
+            cookieDate.setDate(cookieDate.getDate() + 1); // 하루동안 유지
+            setCookie('refresh_token', token, { sameSite: 'strict',path  : '/', expires: cookieDate} );
             axios.defaults.headers.common['Authorization'] = 'Bearer ' + token;
             history('/Mypage')
             if(inputChecked){
-              if(reId){
+              if(rememerId){
                 getCookie('user_id')
               }else{
                 setCookie('user_id' ,res.data.user,{} );
               }
+
             }else{
               setInputChecked(false)
               removeCookie("user_id")
             }
           }).catch(error=>{
-            console.log(error.response)
             setIsLoggedIn(false)
           })
         }

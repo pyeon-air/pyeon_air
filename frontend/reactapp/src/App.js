@@ -17,17 +17,18 @@ import {getCookie, setCookie ,removeCookie} from './components/Cookie';
 
 
 
+
 function App() {
   const [isLogin , setIsLogin] = useState(getCookie("refresh_token"));
   const [loading , setLoading] = useState(false);
   
   return (
     <div>
-        <Nav />
-        <Logout/>
+  
+        {/* <Nav /> */}
       {/* <UserContextProvider> */}
+        <Logout/>
         <Routes>
-          <Route element={isLogin ? <Mypage/> : <Login />}></Route>
         <Route path="/" element={<Home />} />
         <Route path="/login"  element={<Login/>} />
         {/* <Route path="/slider"  element={<Slider/>} />
@@ -36,7 +37,7 @@ function App() {
         <Route path="/NotFound"  element={ <NotFound />} />
         </Routes>
         {/* </UserContextProvider> */}
-        
+
 </div>
   );
 }

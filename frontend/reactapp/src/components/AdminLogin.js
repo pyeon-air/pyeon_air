@@ -62,11 +62,7 @@ const AdminLogin = ({ isLoggedInHandle}) => {
         }
     
           return (
-              <>
-  
-
-            {/* <h3>편항 로그인</h3> */}
-      
+              <>      
               {      <InputId 
                      type="text" 
                      id="account" 
