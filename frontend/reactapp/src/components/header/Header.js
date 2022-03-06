@@ -25,7 +25,7 @@ display:flex;
 `;
 const IconLI = styled.li`
 margin-right:10px;
-cursor: pointer;ddd
+cursor: pointer;
 
 `;
 
