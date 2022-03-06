@@ -15,9 +15,9 @@ class User(AbstractUser):
     role = models.CharField(max_length = 2, choices = ROLE_CHOICES, null = False) 
     company_name = models.ForeignKey('member.Companylist', related_name = "User", on_delete = models.CASCADE, db_column = "company_name", null = True) # null 값 변경?
     address = models.CharField(max_length = 100, null = True)
-    birth = models.DateTimeField(null = True)
-    contact = models.IntegerField(null = True)
-    other = models.CharField(max_length = 500, null = True)
+    birth = models.DateField(null = True)
+    contact = models.CharField(null = True, max_length = 11)
+    other = models.CharField(max_length = 500, null = True, blank= True)
     in_progress = models.BooleanField(null = False, default = True)
 
     def __str__(self):
