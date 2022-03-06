@@ -6,12 +6,14 @@ import './Home.css';
 import Loader from '../components/Loader';
 import Header from '../components/header/Header';
 import './Mypage.css'
-// import Gnb from '../components/gnb/gnb';
-import Accordianwrap from '../components/gnb/Accordianwrap'
+import Sidebar from '../components/gnb/Sidebar';
+// import Accordianwrap from '../components/gnb/Accordianwrap'
 const Mypage = () => {
     const [loading, setLoading] = useState(false)
     const history = useNavigate();
     const [cookies ,setCookies] = useState(getCookie("refresh_token"))
+    const [activeKey, setActiveKey] = useState('1');
+    const [openKeys, setOpenKeys] = useState(['3', '4']);
  useEffect(() =>{
     setTimeout(()=>{
         setLoading(true)
@@ -27,7 +29,9 @@ const Mypage = () => {
         (loading ? 
         <div className='mypage'>    
             <div className='aside'>
-
+            <div className="nav-wrapper">
+            <Sidebar />
+</div>
             </div>
             <div className='content'>
                 <Header />
