@@ -6,6 +6,11 @@ import NotFound from './pages/NotFound';
 import Mypage from './pages/Mypage';
 // import { UserContextProvider } from "./components/context"
 
+// 큰재우 테스트
+// import Slider_header from './pages/Slider_header';
+// import JqTest from './components/jqTest';
+
+
 import { BrowserRouter, Route, Routes } from "react-router-dom";
 import Logout from './components/Logout';
 import {getCookie, setCookie ,removeCookie} from './components/Cookie';
@@ -26,6 +31,8 @@ function App() {
         <Routes>
         <Route path="/" element={<Home />} />
         <Route path="/login"  element={<Login/>} />
+        {/* <Route path="/slider"  element={<Slider/>} />
+        <Route path="/jqTest"  element={<JqTest/>} /> */}
         <Route path="/Mypage"  element={ <Mypage />} />
         <Route path="/NotFound"  element={ <NotFound />} />
         </Routes>
