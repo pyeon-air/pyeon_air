@@ -1,6 +1,7 @@
 import React from 'react';
 import './Home.css';
-import Slider from './Slider'
+import Slider_header from './Slider_header'
+import Slider_footer from './Slider_footer'
 import {useEffect, useState} from 'react';
 import $ from "jquery"
 
@@ -22,15 +23,9 @@ const Home = () => {
         <>
         <div className='main_area'>
             <div className='main_wrap'>
-                {/* <div className='main_header_wrap'> */}
                     <div className='main_header_logo'></div>
                     <div className='main_header_login' onClick={handleClick}>로그인</div>
-                    {/* <div className='main_slider_btn'>
-                    </div> */}
-                    {/* <div className='main_slider_cntnt'>
-                    </div> */}
-                        <Slider />
-                {/* </div> */}
+                    <Slider_header />
                 <div className='main_body_wrap'>
                     <div className='main_body_header'></div>
                     <div className='main_body_1'>
@@ -74,7 +69,7 @@ const Home = () => {
             </div>
         </div>
         <div className='main_team_wrap'>
-            {/* <Slider /> */}
+            <Slider_footer />
         </div>
         <div className='main_footer_wrap'>
             <div className='main_footer_logo'></div>

@@ -1,12 +1,14 @@
 import React, { useState, useRef }  from 'react';
 import Home from './pages/Home';
 import Login from './pages/Login';
-import Slider from './pages/Slider';
 import Nav from './components/Nav';
 import NotFound from './pages/NotFound';
 import Mypage from './pages/Mypage';
 // import { UserContextProvider } from "./components/context"
-import JqTest from './components/jqTest';
+
+// 큰재우 테스트
+// import Slider_header from './pages/Slider_header';
+// import JqTest from './components/jqTest';
 
 
 import { BrowserRouter, Route, Routes } from "react-router-dom";
@@ -28,8 +30,8 @@ function App() {
           <Route element={isLogin ? <Mypage/> : <Login />}></Route>
         <Route path="/" element={<Home />} />
         <Route path="/login"  element={<Login/>} />
-        <Route path="/slider"  element={<Slider/>} />
-        <Route path="/jqTest"  element={<JqTest/>} />
+        {/* <Route path="/slider"  element={<Slider/>} />
+        <Route path="/jqTest"  element={<JqTest/>} /> */}
         <Route path="/Mypage"  element={ <Mypage />} />
         <Route path="/NotFound"  element={ <NotFound />} />
         </Routes>

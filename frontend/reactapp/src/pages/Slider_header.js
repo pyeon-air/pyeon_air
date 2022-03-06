@@ -46,10 +46,6 @@ export default class SimpleSlider extends Component {
     isPause : false
   }
 
-  state1 = {
-    isPause : false
-  }
-
   constructor(props) {
     super(props);
     this.play = this.play.bind(this);
@@ -84,7 +80,6 @@ export default class SimpleSlider extends Component {
       appendDots: dots => (
         <div
           style={{
-            // backgroundColor: "#ddd",
             borderRadius: "10px",
             border: "none",
             paddingLeft: "13px",
@@ -100,6 +95,11 @@ export default class SimpleSlider extends Component {
             flexDirection: "column",
             height: "100%",
             }}> {dots} </ul>
+          
+          <div className="slider_btn_area" style={{ textAlign: "center" }}>
+            <button className={ this.state.isPause ? "slider_btn_play active" : "slider_btn_play"} onClick={this.play}></button>
+            <button className="slider_btn_pause" onClick={this.pause}></button>
+          </div>
         </div>
       ),
       customPaging: i => (
@@ -142,10 +142,6 @@ export default class SimpleSlider extends Component {
             <img src="/images/main/main_header2.png"/>
           </div>
         </Slider>
-        <div className="slider_btn_area" style={{ textAlign: "center" }}>
-          <button className={ this.state.isPause ? "slider_btn_play active" : "slider_btn_play"} onClick={this.play}></button>
-          <button className="slider_btn_pause" onClick={this.pause}></button>
-        </div>
       </div>
     );
   }
