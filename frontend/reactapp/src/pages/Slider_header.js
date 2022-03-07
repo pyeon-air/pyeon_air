@@ -97,13 +97,13 @@ export default class SimpleSlider extends Component {
             }}> {dots} </ul>
           
           <div className="slider_btn_area" style={{ textAlign: "center" }}>
-            <button className={ this.state.isPause ? "slider_btn_play active" : "slider_btn_play"} onClick={this.play}></button>
-            <button className="slider_btn_pause" onClick={this.pause}></button>
+            <button className={ this.state.isPause ? "slider_btn_play btn active" : "slider_btn_play btn"} onClick={this.play}></button>
+            <button className="slider_btn_pause btn" onClick={this.pause}></button>
           </div>
         </div>
       ),
       customPaging: i => (
-        <div
+        <div className="btn"
           style={{
             width: "30px",
             color: "black",

@@ -27,7 +27,7 @@ function App() {
   
         {/* <Nav /> */}
       {/* <UserContextProvider> */}
-        <Logout/>
+        {/* <Logout/> */}
         <Routes>
         <Route path="/" element={<Home />} />
         <Route path="/login"  element={<Login/>} />

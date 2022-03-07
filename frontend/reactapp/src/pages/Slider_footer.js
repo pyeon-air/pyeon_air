@@ -32,7 +32,7 @@ function SampleNextArrow(props) {
         // display: "block", 
         // background: "red",
         top:"200px",
-        left:"950px",
+        right:"-100px",
         zIndex: "1",
         width: "50px",
         fontSize: "100px",

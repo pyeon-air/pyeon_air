@@ -3,11 +3,11 @@ import './Home.css';
 import Slider_header from './Slider_header'
 import Slider_footer from './Slider_footer'
 import {useEffect, useState} from 'react';
-import $ from "jquery"
+import $, { isFunction } from "jquery"
 
 const Home = () => {
 
-  const [text, setText] = useState();
+//   const [text, setText] = useState();
 
 //   useEffect(()=>{
 //       $(".main_header_login").mousedown(function () {
@@ -15,18 +15,117 @@ const Home = () => {
 //       });
 //   }, []);
 
-  function handleClick() {
-    window.location.href = "/login";
-  }
+    // const foo = $('.main_airplane_img');
+
+    // const [tempValue, setTempValue] = useState(0);
+    // const [isTempHigh, setIsTempHigh] = useState(0);
+
+
+    window.__scrollPosition = document.documentElement.scrollTop || 0;
+
+    window.addEventListener('scroll', (e) => {
+        const value = window.scrollY;
+        let _documentY = document.documentElement.scrollTop;
+        let _direction = _documentY - window.__scrollPosition >= 0 ? 1 : -1;
+        if( _direction == 1 ) window.__scrollPosition = _documentY; // Update scrollY
+        else window.__scrollPosition = 0;
+        console.log( "scrollPosition : " + window.__scrollPosition + ", _documentY : " + _documentY +", _direction : " + _direction);
+
+
+        // foo.style.left = value + 'px';
+        
+        // if( value%5 == 0 ) {
+            // if( this.state.tempValue == 0 ){
+            // if( 1 ){
+                // this.state.setTempValue(value);
+            // } else {
+                // console.log(value)
+                const top = $('.main_airplane_img').css('top');
+                const left = $('.main_airplane_img').css('left');
+                // const top = 0;
+                // const left = 0;
+                // console.log( top + ' / ' + left + ' / ' + value );
+    
+                if( value < 1 ) {
+                    $('.main_airplane_img').css( 'top', '200px' );
+                    $('.main_airplane_img').css( 'left', '40px' );
+                }
+        
+                if( value < 300 ) {
+                    $('.main_airplane_img').css( 'top', '200px' );
+                    $('.main_airplane_img').css( 'left', '40px' );
+                }
+                    
+                if( value > 300 && value < 700 ) {
+                    if( _direction == 1 ) {
+                        // $('.main_airplane_img').css( 'top', (top.replace('px','')*1 + 4)+'px' );
+                        $('.main_airplane_img').css( 'top', (top.replace('px','')*1.01)+'px' );
+                        // $('.main_airplane_img').css( 'left', (left.replace('px','')*1 + 15)+'px' );
+                        $('.main_airplane_img').css( 'left', (left.replace('px','')*1.04)+'px' );
+                        $('.main_airplane_img').css( 'transform', 'scaleX(1)' );
+                    } else {
+                        $('.main_airplane_img').css( 'top', (top.replace('px','')*1 - 4)+'px' );
+                        $('.main_airplane_img').css( 'left', (left.replace('px','')*1 - 15)+'px' );
+                        $('.main_airplane_img').css( 'transform', 'scaleX(1)' );
+                    }
+                }
+                    
+                if( value >= 700 && value < 1000 ) {
+                    if( _direction == 1 ) {
+                        // $('.main_airplane_img').css( 'top', (top.replace('px','')*1 + 5)+'px' );
+                        $('.main_airplane_img').css( 'top', (top.replace('px','')*1.01)+'px' );
+                        // $('.main_airplane_img').css( 'left', (left.replace('px','')*1 - 15)+'px' );
+                        $('.main_airplane_img').css( 'left', (left.replace('px','')*0.96)+'px' );
+                        $('.main_airplane_img').css( 'transform', 'scaleX(-1)' );
+                    } else {
+                        $('.main_airplane_img').css( 'top', (top.replace('px','')*1 - 5)+'px' );
+                        $('.main_airplane_img').css( 'left', (left.replace('px','')*1 + 15)+'px' );
+                        $('.main_airplane_img').css( 'transform', 'scaleX(1)' );
+                    }
+                }
+                    
+                if( value >= 1000 && value < 1350 ) {
+                    if( _direction == 1 ) {
+                        // $('.main_airplane_img').css( 'top', (top.replace('px','')*1 + 5)+'px' );
+                        $('.main_airplane_img').css( 'top', (top.replace('px','')*1.01)+'px' );
+                        $('.main_airplane_img').css( 'left', (left.replace('px','')*1 + 15)+'px' );
+                        $('.main_airplane_img').css( 'transform', 'scaleX(1)' );
+                    } else {
+                        $('.main_airplane_img').css( 'top', (top.replace('px','')*1 - 5)+'px' );
+                        $('.main_airplane_img').css( 'left', (left.replace('px','')*1 - 15)+'px' );
+                        $('.main_airplane_img').css( 'transform', 'scaleX(-1)' );
+                    }
+                }
+                    
+                if( value >= 1350 && value < 1600 ) {
+                    if( _direction == 1 ) {
+                        // $('.main_airplane_img').css( 'top', (top.replace('px','')*1 + 5)+'px' );
+                        $('.main_airplane_img').css( 'top', (top.replace('px','')*1.01)+'px' );
+                        $('.main_airplane_img').css( 'left', (left.replace('px','')*1 - 15)+'px' );
+                        $('.main_airplane_img').css( 'transform', 'scaleX(-1)' );
+                    } else {
+                        $('.main_airplane_img').css( 'top', (top.replace('px','')*1 - 5)+'px' );
+                        $('.main_airplane_img').css( 'left', (left.replace('px','')*1 + 15)+'px' );
+                        $('.main_airplane_img').css( 'transform', 'scaleX(1)' );
+                    }
+                }
+            // }
+        // }
+    });
+
+    function handleClick() {
+        window.location.href = "/login";
+    }
 
     return (
         <>
         <div className='main_area'>
             <div className='main_wrap'>
                     <div className='main_header_logo'></div>
-                    <div className='main_header_login' onClick={handleClick}>로그인</div>
+                    <div className='main_header_login btn' onClick={handleClick}>로그인</div>
                     <Slider_header />
                 <div className='main_body_wrap'>
+                    <img className="main_airplane_img" src="/images/main/main_airplane.png"/>
                     <div className='main_body_header'></div>
                     <div className='main_body_1'>
                         <h2>편항으로 편해지는 에듀라이프</h2>
