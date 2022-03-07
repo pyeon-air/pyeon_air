@@ -27,6 +27,7 @@ class QrInfo(models.Model):
     qr_content = models.CharField(max_length=50, null=False)
     qr_notice = models.CharField(max_length=50, null=False)
     qr_link = models.CharField(max_length=200, null=False, default='')
+    # created_at = models.DateTimeField(auto_now_add = True, null = False)
 
     class Meta:
         ordering = []
@@ -42,3 +43,23 @@ class QrInfo(models.Model):
         valid_time = None
         return valid_time
 
+
+
+class Attendance(models.Model):
+    ATTENDANCE_CATEGORY = [
+        ('공가', '공가'),
+        ('외출', '외출'),
+        ('지각', '지각'),
+        ('결석', '결석'),
+    ]
+
+    # account_id = models.ForeignKey('member.Account', related_name = 'account_login_log', on_delete = models.CASCADE, null = False) # 임시, 수정 필요
+    category = models.CharField(max_length=2, choices=ATTENDANCE_CATEGORY, default='IN')
+    reason = models.CharField(max_length=50, null=False)
+    file = models.FileField(upload_to='uploads/%Y/%m/%d/')
+    created_at = models.DateTimeField(auto_now_add = True, null = False)
+    updated_at = models.DateTimeField(auto_now = True, null = False)
+
+    class Meta:
+        ordering = []
+        verbose_name = 'Attendance'
