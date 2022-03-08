@@ -144,9 +144,7 @@ DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 ASGI_APPLICATION = 'realtimelecture.asgi.application'
 
 if DEBUG:
-    ALLOWED_HOSTS += ['*', ]그거는 그냥 마이그레이션만 초기화해주느거지 ?
-￼
-@심동민에 메시지 보내기
+    ALLOWED_HOSTS += ['*', ]
 
 
 STATICFILES_DIRS = [os.path.join(BASE_DIR, 'static')]

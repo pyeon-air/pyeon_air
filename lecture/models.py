@@ -12,7 +12,7 @@ class Lecture_info(models.Model):
     company_name = models.CharField(max_length = 20, null = False) 
     created_at = models.DateTimeField(auto_now_add = True, null = False)
     updated_at = models.DateTimeField(auto_now = True, null = False)
-    is_assignment = models.ForeignKey('assignment.Assignment_create_info', related_name = 'lecture_info',on_delete = models.SET_NULL, db_column = 'is_assignment', null = True) # assignment_id forign key로 추가예정 없을 경우 과제 없음.
+    is_assignment = models.ForeignKey('assignment.Assignment_create_info', related_name = 'lecture_info', on_delete = models.SET_NULL, db_column = 'is_assignment', null = True) # assignment_id forign key로 추가예정 없을 경우 과제 없음.
     
     def __str__(self):
         return self.title
@@ -26,4 +26,4 @@ class Lecture_attend_log(models.Model):
     created_at = models.DateTimeField(auto_now_add = True, null = False)
 
     def __str__(self):
-        return self.lecture_log_id
+        return self.lecture_log_idnull
