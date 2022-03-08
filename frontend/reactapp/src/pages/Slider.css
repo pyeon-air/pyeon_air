@@ -43,6 +43,9 @@
     /* height:150px; */
     float:right;
 }
+.main_header_slider_img2{
+    
+}
 
 .main_header_slider_area .slick-prev {
     background-image: url(../../public/images/main/main_slider_prev.png);
@@ -114,7 +117,7 @@
 .main_footer_slider {
     height:400px;
     /* margin: 20px; */
-    text-align: center;
+    text-align: -webkit-center;
 }
 .main_footer_slider_img{
     height:300px;
@@ -177,4 +180,5 @@
     font-size:30px;
     top: 50px;
     left: 200px;
+    width: 200px;
 }

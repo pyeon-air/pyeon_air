@@ -32,7 +32,7 @@ function SampleNextArrow(props) {
         // display: "block", 
         // background: "red",
         top:"200px",
-        left:"950px",
+        right:"-100px",
         zIndex: "1",
         width: "50px",
         fontSize: "100px",
@@ -123,7 +123,7 @@ export default class SimpleSlider extends Component {
           <div className="main_footer_slider">
           <img className="main_footer_slider_img" src="/images/main/main_footer_face_6.png"/>
             <div className="main_footer_slider_info">
-              <span>이동현</span>
+              <span>조재우</span>
               <span>백엔드</span>
             </div>
           </div>
