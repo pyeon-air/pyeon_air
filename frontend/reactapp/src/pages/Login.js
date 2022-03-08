@@ -22,7 +22,7 @@ text-align: center;
   border:none;
   padding:14px;
   outline: none;
-  border-radious
+  border-radius: 50px;
   cursor: pointer;
   width: 50%;
   position: relative;

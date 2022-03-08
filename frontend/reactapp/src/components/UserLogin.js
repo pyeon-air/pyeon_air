@@ -83,6 +83,7 @@ const UserLogin = () => {
               username: account.username,
               password: account.password
           }).then((res)=>{
+            console.log(res)
             setIsLoggedIn(true)
             const { token } = res.data;
             const cookieDate = new Date()
@@ -103,6 +104,7 @@ const UserLogin = () => {
             }
           }).catch(error=>{
             setIsLoggedIn(false)
+            console.log(error)
           })
         }
           return (
