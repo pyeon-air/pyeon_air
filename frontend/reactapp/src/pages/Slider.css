@@ -43,6 +43,9 @@
     /* height:150px; */
     float:right;
 }
+.main_header_slider_img2{
+    
+}
 
 .main_header_slider_area .slick-prev {
     background-image: url(../../public/images/main/main_slider_prev.png);

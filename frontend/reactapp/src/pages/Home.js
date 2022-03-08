@@ -7,20 +7,6 @@ import $, { isFunction } from "jquery"
 
 const Home = () => {
 
-//   const [text, setText] = useState();
-
-//   useEffect(()=>{
-//       $(".main_header_login").mousedown(function () {
-//         window.location.href = "/login";
-//       });
-//   }, []);
-
-    // const foo = $('.main_airplane_img');
-
-    // const [tempValue, setTempValue] = useState(0);
-    // const [isTempHigh, setIsTempHigh] = useState(0);
-
-
     window.__scrollPosition = document.documentElement.scrollTop || 0;
 
     window.addEventListener('scroll', (e) => {
@@ -31,81 +17,95 @@ const Home = () => {
         else window.__scrollPosition = 0;
         console.log( "scrollPosition : " + window.__scrollPosition + ", _documentY : " + _documentY +", _direction : " + _direction);
 
-
-        // foo.style.left = value + 'px';
-        
-        // if( value%5 == 0 ) {
-            // if( this.state.tempValue == 0 ){
-            // if( 1 ){
-                // this.state.setTempValue(value);
-            // } else {
-                // console.log(value)
                 const top = $('.main_airplane_img').css('top');
                 const left = $('.main_airplane_img').css('left');
-                // const top = 0;
-                // const left = 0;
-                // console.log( top + ' / ' + left + ' / ' + value );
-    
-                if( value < 1 ) {
-                    $('.main_airplane_img').css( 'top', '200px' );
-                    $('.main_airplane_img').css( 'left', '40px' );
-                }
         
                 if( value < 300 ) {
                     $('.main_airplane_img').css( 'top', '200px' );
-                    $('.main_airplane_img').css( 'left', '40px' );
+                    $('.main_airplane_img').css( 'left', '1px' );
                 }
                     
-                if( value > 300 && value < 700 ) {
+                if( value >= 300 && value < 700 ) {
                     if( _direction == 1 ) {
-                        // $('.main_airplane_img').css( 'top', (top.replace('px','')*1 + 4)+'px' );
-                        $('.main_airplane_img').css( 'top', (top.replace('px','')*1.01)+'px' );
-                        // $('.main_airplane_img').css( 'left', (left.replace('px','')*1 + 15)+'px' );
-                        $('.main_airplane_img').css( 'left', (left.replace('px','')*1.04)+'px' );
+                        // $('.main_airplane_img').animate({'top':'350px','left':'580px','transform':'scaleX(1)'}, 'slow');
+                        $('.main_airplane_img').css( 'top', '350px' );
+                        $('.main_airplane_img').css( 'left', '580px' );
                         $('.main_airplane_img').css( 'transform', 'scaleX(1)' );
                     } else {
-                        $('.main_airplane_img').css( 'top', (top.replace('px','')*1 - 4)+'px' );
-                        $('.main_airplane_img').css( 'left', (left.replace('px','')*1 - 15)+'px' );
-                        $('.main_airplane_img').css( 'transform', 'scaleX(1)' );
-                    }
-                }
-                    
-                if( value >= 700 && value < 1000 ) {
-                    if( _direction == 1 ) {
-                        // $('.main_airplane_img').css( 'top', (top.replace('px','')*1 + 5)+'px' );
-                        $('.main_airplane_img').css( 'top', (top.replace('px','')*1.01)+'px' );
-                        // $('.main_airplane_img').css( 'left', (left.replace('px','')*1 - 15)+'px' );
-                        $('.main_airplane_img').css( 'left', (left.replace('px','')*0.96)+'px' );
-                        $('.main_airplane_img').css( 'transform', 'scaleX(-1)' );
-                    } else {
-                        $('.main_airplane_img').css( 'top', (top.replace('px','')*1 - 5)+'px' );
-                        $('.main_airplane_img').css( 'left', (left.replace('px','')*1 + 15)+'px' );
-                        $('.main_airplane_img').css( 'transform', 'scaleX(1)' );
-                    }
-                }
-                    
-                if( value >= 1000 && value < 1350 ) {
-                    if( _direction == 1 ) {
-                        // $('.main_airplane_img').css( 'top', (top.replace('px','')*1 + 5)+'px' );
-                        $('.main_airplane_img').css( 'top', (top.replace('px','')*1.01)+'px' );
-                        $('.main_airplane_img').css( 'left', (left.replace('px','')*1 + 15)+'px' );
-                        $('.main_airplane_img').css( 'transform', 'scaleX(1)' );
-                    } else {
-                        $('.main_airplane_img').css( 'top', (top.replace('px','')*1 - 5)+'px' );
-                        $('.main_airplane_img').css( 'left', (left.replace('px','')*1 - 15)+'px' );
+                        $('.main_airplane_img').css( 'top', '200px' );
+                        $('.main_airplane_img').css( 'left', '1px' );
                         $('.main_airplane_img').css( 'transform', 'scaleX(-1)' );
                     }
                 }
                     
-                if( value >= 1350 && value < 1600 ) {
+                if( value >= 700 && value < 900 ) {
                     if( _direction == 1 ) {
-                        // $('.main_airplane_img').css( 'top', (top.replace('px','')*1 + 5)+'px' );
-                        $('.main_airplane_img').css( 'top', (top.replace('px','')*1.01)+'px' );
-                        $('.main_airplane_img').css( 'left', (left.replace('px','')*1 - 15)+'px' );
+                        // $('.main_airplane_img').animate({'top':'700px','left':'1150px','transform':'scaleX(-1)'}, 'slow');
+                        $('.main_airplane_img').css( 'top', '700px' );
+                        $('.main_airplane_img').css( 'left', '1150px' );
                         $('.main_airplane_img').css( 'transform', 'scaleX(-1)' );
                     } else {
-                        $('.main_airplane_img').css( 'top', (top.replace('px','')*1 - 5)+'px' );
-                        $('.main_airplane_img').css( 'left', (left.replace('px','')*1 + 15)+'px' );
+                        $('.main_airplane_img').css( 'top', '350px' );
+                        $('.main_airplane_img').css( 'left', '580px' );
+                        $('.main_airplane_img').css( 'transform', 'scaleX(1)' );
+                    }
+                }
+                    
+                if( value >= 900 && value < 1100 ) {
+                    if( _direction == 1 ) {
+                        $('.main_airplane_img').css( 'top', '950px' );
+                        $('.main_airplane_img').css( 'left', '650px' );
+                    } else {
+                        $('.main_airplane_img').css( 'top', '700px' );
+                        $('.main_airplane_img').css( 'left', '1150px' );
+                        $('.main_airplane_img').css( 'transform', 'scaleX(-1)' );
+                    }
+                }
+                    
+                if( value >= 1100 && value < 1300 ) {
+                    if( _direction == 1 ) {
+                        $('.main_airplane_img').css( 'top', '1100px' );
+                        $('.main_airplane_img').css( 'left', '50px' );
+                        $('.main_airplane_img').css( 'transform', 'scaleX(1)' );
+                    } else {
+                        $('.main_airplane_img').css( 'top', '950px' );
+                        $('.main_airplane_img').css( 'left', '650px' );
+                        $('.main_airplane_img').css( 'transform', 'scaleX(-1)' );
+                    }
+                }
+                    
+                if( value >= 1300 && value < 1600 ) {
+                    if( _direction == 1 ) {
+                        $('.main_airplane_img').css( 'top', '1400px' );
+                        $('.main_airplane_img').css( 'left', '450px' );
+                        $('.main_airplane_img').css( 'transform', 'scaleX(1)' );
+                    } else {
+                        $('.main_airplane_img').css( 'top', '1100px' );
+                        $('.main_airplane_img').css( 'left', '50px' );
+                        $('.main_airplane_img').css( 'transform', 'scaleX(-1)' );
+                    }
+                }
+                    
+                if( value >= 1600 && value < 1800 ) {
+                    if( _direction == 1 ) {
+                        $('.main_airplane_img').css( 'top', '1600px' );
+                        $('.main_airplane_img').css( 'left', '1100px' );
+                        $('.main_airplane_img').css( 'transform', 'scaleX(-1)' );
+                    } else {
+                        $('.main_airplane_img').css( 'top', '1400px' );
+                        $('.main_airplane_img').css( 'left', '450px' );
+                        $('.main_airplane_img').css( 'transform', 'scaleX(-1)' );
+                    }
+                }
+                    
+                if( value >= 1800 ) {
+                    if( _direction == 1 ) {
+                        $('.main_airplane_img').css( 'top', '1800px' );
+                        $('.main_airplane_img').css( 'left', '700px' );
+                        $('.main_airplane_img').css( 'transform', 'scaleX(-1)' );
+                    } else {
+                        $('.main_airplane_img').css( 'top', '1600px' );
+                        $('.main_airplane_img').css( 'left', '1100px' );
                         $('.main_airplane_img').css( 'transform', 'scaleX(1)' );
                     }
                 }
@@ -166,19 +166,19 @@ const Home = () => {
                     </div>
                 </div>
             </div>
-        </div>
-        <div className='main_team_wrap'>
-            <Slider_footer />
-        </div>
-        <div className='main_footer_wrap'>
-            <div className='main_footer_logo'></div>
-            <div className='main_footer_copyright'>
-                COPYRIGHTⓒ 2022 PYEONHANG ALL RIGHTS RESERVED.
+            <div className='main_team_wrap'>
+                <Slider_footer />
             </div>
-            <div className='main_footer_policy'>
-                <p onClick="alert('준비중입니다.');">이용약관</p>
-                <p>│</p>
-                <p onClick="alert('준비중입니다.');">개인정보처리방침</p>
+            <div className='main_footer_wrap'>
+                <div className='main_footer_logo'></div>
+                <div className='main_footer_copyright'>
+                    COPYRIGHTⓒ 2022 PYEONHANG ALL RIGHTS RESERVED.
+                </div>
+                <div className='main_footer_policy'>
+                    <p onClick="alert('준비중입니다.');">이용약관</p>
+                    <p>│</p>
+                    <p onClick="alert('준비중입니다.');">개인정보처리방침</p>
+                </div>
             </div>
         </div>
         </>

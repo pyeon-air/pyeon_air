@@ -13,6 +13,8 @@ div{
 
 .main_area{
     /* margin: 10px 200px 0 200px; */
+    max-width:1920px;
+    /* max-height:1080px; */
 }
 
 .main_wrap::before{
@@ -267,6 +269,6 @@ div{
     z-index: 1;
     width: 15%;
     top: 200px;
-    left: 40px;
+    left: 1px;
     /* transform: scaleX(-1); */
 }
