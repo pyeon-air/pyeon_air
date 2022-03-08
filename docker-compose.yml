@@ -41,7 +41,7 @@ services:
       context: .
       dockerfile: ./compose/react/Dockerfile-react
     volumes:
-      - /project/frontend/reactapp/node_modules
+      - /reactapp/node_modules
       - ./frontend/reactapp:/project/frontend/reactapp
     ports:
       - "3000:3000"
