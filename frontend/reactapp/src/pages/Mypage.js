@@ -2,7 +2,7 @@ import React, { useEffect, useState } from 'react';
 import Cookies from 'universal-cookie';
 import {getCookie} from '../components/Cookie';
 import { useNavigate } from 'react-router';
-import './Home.css';
+// import './Home.css';
 import Loader from '../components/Loader';
 import Header from '../components/header/Header';
 import './Mypage.css'
@@ -18,12 +18,12 @@ const Mypage = () => {
     setTimeout(()=>{
         setLoading(true)
       },1000)
-     if(cookies){
-        history('/mypage')
-    }else{
-        history('/Login')
+    //  if(cookies){
+    //     history('/mypage')
+    // }else{
+    //     history('/Login')
     
-    }
+    // }
  },[cookies])
     return (
         (loading ? 
