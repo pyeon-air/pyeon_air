@@ -22,26 +22,28 @@ import StudentConsult from './pages/manage/Student/StudentConsult';
 // 3. 강의관리
 import LiveLecture from './pages/manage/Lecture/LiveLecture';
 import RecordLecture from './pages/manage/Lecture/RecordLecture';
+import CreateLecture from './pages/manage/Lecture/CreateLecture';
+
 // 4. 학습자료
 import LectureData from './pages/manage/Learn/LectureData';
 import Report from './pages/manage/Learn/Report';
 // import { UserContextProvider } from "./components/context"
 
 // 수강진 페이지 목록
-import DashboardStudent from './pages/Student/Dashboard';
+import DashboardStudent from './pages/student/Dashboard';
 // 1. 마이페이지
-import Info from './pages/Student/Mypage/Info';
-import AttendManage from './pages/Student/Mypage/AttendManage';
+import Info from './pages/student/Mypage/Info';
+import AttendManage from './pages/student/Mypage/AttendManage';
 // 2. 강의수강
-import EnterRoom from './pages/Student/Lecture/EnterRoom';
+import EnterRoom from './pages/student/Lecture/EnterRoom';
 // 3. 학습자료
-import Source from './pages/Student/LectureData/Source';
-import ReportStudent from './pages/Student/LectureData/Report';
+import Source from './pages/student/LectureData/Source';
+import ReportStudent from './pages/student/LectureData/Report';
 // 4. 학습안내
-import Notice from './pages/Student/LectureInfo/Notice';
-import Calendar from './pages/Student/LectureInfo/Calendar';
+import Notice from './pages/student/LectureInfo/Notice';
+import Calendar from './pages/student/LectureInfo/Calendar';
 // 5. 문의
-import LearnAndRun from './pages/Student/Qna/LearnAndRun';
+import LearnAndRun from './pages/student/Qna/LearnAndRun';
 
 // 큰재우 테스트
 // import Slider_header from './pages/Slider_header';
@@ -88,6 +90,7 @@ function App() {
               {/* 강의관리 */}
                 <Route path="/manage/lecture/liveLecture"  element={ <LiveLecture />} />
                 <Route path="/manage/lecture/recordLecture"  element={ <RecordLecture />} />
+                <Route path="/manage/lecture/createLecture"  element={ <CreateLecture />} />
               {/* 학습자료 */}
                 <Route path="/manage/learn/lectureData"  element={ <LectureData />} />
                 <Route path="/manage/learn/report"  element={ <Report />} />
