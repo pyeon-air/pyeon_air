@@ -10,23 +10,23 @@ import Nav from './components/Nav';
 import Mypage from './pages/Mypage';
 
 // 운영진 페이지 목록
-import Dashboard from './pages/manage/Dashboard';
+import Dashboard from './pages/Manage/Dashboard';
 // 1. 출석관리
-import AttendState from './pages/manage/Attend/AttendState';
-import QrManage from './pages/manage/Attend/QrManage';
+import AttendState from './pages/Manage/Attend/AttendState';
+import QrManage from './pages/Manage/Attend/QrManage';
 // 2. 수강생관리
-import StudentManage from './pages/manage/Student/StudentManage';
-import AcademicAchieve from './pages/manage/Student/AcademicAchieve';
-import CompleteProcess from './pages/manage/Student/CompleteProcess';
-import StudentConsult from './pages/manage/Student/StudentConsult';
+import StudentManage from './pages/Manage/Student/StudentManage';
+import AcademicAchieve from './pages/Manage/Student/AcademicAchieve';
+import CompleteProcess from './pages/Manage/Student/CompleteProcess';
+import StudentConsult from './pages/Manage/Student/StudentConsult';
 // 3. 강의관리
-import LiveLecture from './pages/manage/Lecture/LiveLecture';
-import RecordLecture from './pages/manage/Lecture/RecordLecture';
-import CreateLecture from './pages/manage/Lecture/CreateLecture';
+import LiveLecture from './pages/Manage/Lecture/LiveLecture';
+import RecordLecture from './pages/Manage/Lecture/RecordLecture';
+import CreateLecture from './pages/Manage/Lecture/CreateLecture';
 
 // 4. 학습자료
-import LectureData from './pages/manage/Learn/LectureData';
-import Report from './pages/manage/Learn/Report';
+import LectureData from './pages/Manage/Learn/LectureData';
+import Report from './pages/Manage/Learn/Report';
 // import { UserContextProvider } from "./components/context"
 
 // 수강진 페이지 목록
@@ -68,6 +68,7 @@ function App() {
           
           {/* 에러처리 */}
           <Route path="/NotFound"  element={ <NotFound />} />
+
           {/* 메인 */}
           <Route path="/" element={<Home />} />
 
@@ -83,10 +84,10 @@ function App() {
                 {/* TODO : 입퇴실인원 현황 소스코드 입력필요 */}
                 <Route path="/manage/attend/attendState"  element={ <AttendState />} />
               {/* 수강생관리 */}
-                <Route path="/manage/Student/StudentManage"  element={ <StudentManage />} />
-                <Route path="/manage/Student/academicAchieve"  element={ <AcademicAchieve />} />
-                <Route path="/manage/Student/completeProcess"  element={ <CompleteProcess />} />
-                <Route path="/manage/Student/StudentConsult"  element={ <StudentConsult />} />
+                <Route path="/manage/student/studentManage"  element={ <StudentManage />} />
+                <Route path="/manage/student/academicAchieve"  element={ <AcademicAchieve />} />
+                <Route path="/manage/student/completeProcess"  element={ <CompleteProcess />} />
+                <Route path="/manage/student/studentConsult"  element={ <StudentConsult />} />
               {/* 강의관리 */}
                 <Route path="/manage/lecture/liveLecture"  element={ <LiveLecture />} />
                 <Route path="/manage/lecture/recordLecture"  element={ <RecordLecture />} />
@@ -95,22 +96,21 @@ function App() {
                 <Route path="/manage/learn/lectureData"  element={ <LectureData />} />
                 <Route path="/manage/learn/report"  element={ <Report />} />
 
-          
           {/* 수강생 페이지 */}
-            <Route path="/Student/dashboard"  element={ <DashboardStudent />} />
+            <Route path="/student/dashboard"  element={ <DashboardStudent />} />
               {/* 마이페이지 */}
-                <Route path="/Student/mypage/info"  element={ <Info />} />
-                <Route path="/Student/mypage/attendManage"  element={ <AttendManage />} />
+                <Route path="/student/mypage/info"  element={ <Info />} />
+                <Route path="/student/mypage/attendManage"  element={ <AttendManage />} />
               {/* 강의수강 */}
-                <Route path="/Student/lecture/enterRoom"  element={ <EnterRoom />} />
+                <Route path="/student/lecture/enterRoom"  element={ <EnterRoom />} />
               {/* 학습자료 */}
-                <Route path="/Student/lectureData/Source"  element={ <Source />} />
-                <Route path="/Student/lectureData/Report"  element={ <ReportStudent />} />
+                <Route path="/student/lectureData/source"  element={ <Source />} />
+                <Route path="/student/lectureData/report"  element={ <ReportStudent />} />
               {/* 학습안내 */}
-                <Route path="/Student/lectureInfo/notice"  element={ <Notice />} />
-                <Route path="/Student/lectureInfo/calendar"  element={ <Calendar />} />
+                <Route path="/student/lectureInfo/notice"  element={ <Notice />} />
+                <Route path="/student/lectureInfo/calendar"  element={ <Calendar />} />
               {/* 문의 */}
-                <Route path="/Student/qna/learnAndRun"  element={ <LearnAndRun />} />
+                <Route path="/student/qna/learnAndRun"  element={ <LearnAndRun />} />
         </Routes>
         {/* </UserContextProvider> */}
 
