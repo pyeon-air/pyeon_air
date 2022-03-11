@@ -42,7 +42,7 @@ const Mypage = () => {
                 <Header />
             <div>
                 <div>
-                    영역
+                Dashboard
                 </div>
             </div>
             </div>

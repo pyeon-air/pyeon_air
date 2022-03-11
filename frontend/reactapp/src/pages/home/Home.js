@@ -15,7 +15,7 @@ const Home = () => {
         let _direction = _documentY - window.__scrollPosition >= 0 ? 1 : -1;
         if( _direction == 1 ) window.__scrollPosition = _documentY; // Update scrollY
         else window.__scrollPosition = 0;
-        console.log( "scrollPosition : " + window.__scrollPosition + ", _documentY : " + _documentY +", _direction : " + _direction);
+        // console.log( "scrollPosition : " + window.__scrollPosition + ", _documentY : " + _documentY +", _direction : " + _direction);
 
                 const top = $('.main_airplane_img').css('top');
                 const left = $('.main_airplane_img').css('left');

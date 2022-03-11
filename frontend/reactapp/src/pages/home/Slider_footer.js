@@ -63,7 +63,7 @@ export default class SimpleSlider extends Component {
     this.slider.slickPause();
     if( this.state.isPause == false ) this.setState({ isPause: true });
     else this.setState({ isPause: false });
-    console.log(1);
+    // console.log(1);
   }
 
   render() {
