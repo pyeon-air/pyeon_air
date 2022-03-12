@@ -65,7 +65,7 @@ const UserLogin = () => {
       history('/login')
      }
   },[])
-  const URL = 'http://localhost:8000/member/post_login'
+  const URL = 'http://localhost:8000/member/api/token'
           const onRememberHandler = (e) =>{
             setInputChecked(!inputChecked)
           }
