@@ -1,13 +1,12 @@
-from ast import Delete
 from rest_framework.views import APIView
-from rest_framework import generics
 from rest_framework.generics import ListAPIView, RetrieveAPIView, CreateAPIView, UpdateAPIView, ListCreateAPIView, RetrieveDestroyAPIView
 from rest_framework import permissions, authentication
 
-from .utils import create_qrcode
+from attendance.utils import create_qrcode
 
-from .serializers import InOutLogSerializer, QrInfoSerializer
-from .models import InOutLog, QrInfo
+from attendance.models import QrInfo, InCheck, OutCheck, Attendance
+from attendance.serializers import QrInfoSerializer, InCheckSerializer, OutCheckSerializer, AttendanceSerializer
+
 
 
 # QR
