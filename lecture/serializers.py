@@ -1,12 +1,12 @@
 from rest_framework import serializers
-from .models import Lecture_attend_log,Lecture_info
+from .models import LectureAttendLog,LectureInfo
 
-class Lecture_attend_log_Serializer(serializers.ModelSerializer):
+class LectureAttendLogSerializer(serializers.ModelSerializer):
     class Meta:
-        model = Lecture_attend_log
+        model = LectureAttendLog
         fields = '__all__'
 
-class Lecture_info_Serializer(serializers.ModelSerializer):
+class LectureInfoSerializer(serializers.ModelSerializer):
     class Meta:
-        model = Lecture_attend_log
+        model = LectureInfo
         fields = '__all__'

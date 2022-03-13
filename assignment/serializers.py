@@ -1,7 +1,7 @@
 from rest_framework import serializers
-from .models import Assignment_create_info
+from .models import AssignmentCreateInfo
 
-class Assignment_Serializer(serializers.ModelSerializer):
+class AssignmentSerializer(serializers.ModelSerializer):
     class Meta:
-        model = Assignment_create_info
+        model = AssignmentCreateInfo
         fields = '__all__'
