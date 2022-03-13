@@ -33,15 +33,6 @@ ALLOWED_HOSTS = []
 # Application definition
 
 INSTALLED_APPS = [
-    'django.contrib.admin',
-    'django.contrib.auth',
-    'django.contrib.contenttypes',
-    'django.contrib.sessions',
-    'django.contrib.messages',
-    'django.contrib.staticfiles',
-    'corsheaders',
-    'drf_yasg',
-    'rest_framework',
     'frontend.apps.FrontendConfig',
     'member.apps.MemberConfig',
     'attendance.apps.AttendanceConfig',
@@ -50,11 +41,20 @@ INSTALLED_APPS = [
     'reference.apps.ReferenceConfig',
     'assignment.apps.AssignmentConfig',
     'notice.apps.NoticeConfig',
-<<<<<<< HEAD
-    'qrcode'
-=======
-    'rest_framework_jwt'
->>>>>>> main
+
+    'corsheaders',
+    'drf_yasg',
+    'rest_framework',
+    'qrcode',
+    'rest_framework_jwt',
+    'django_extensions',
+
+    'django.contrib.admin',
+    'django.contrib.auth',
+    'django.contrib.contenttypes',
+    'django.contrib.sessions',
+    'django.contrib.messages',
+    'django.contrib.staticfiles',
 ]
 
 MIDDLEWARE = [
