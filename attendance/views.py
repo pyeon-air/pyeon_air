@@ -1,27 +1,22 @@
 from ast import Delete
 from rest_framework.views import APIView
 from rest_framework import generics
-from rest_framework.mixins import CreateModelMixin, ListModelMixin, RetrieveModelMixin, DestroyModelMixin
+from rest_framework.generics import ListAPIView, RetrieveAPIView, CreateAPIView, UpdateAPIView, ListCreateAPIView, RetrieveDestroyAPIView
 from rest_framework import permissions, authentication
 
-from .createQr import create_qrcode
+from .utils import create_qrcode
 
 from .serializers import InOutLogSerializer, QrInfoSerializer
 from .models import InOutLog, QrInfo
 
 
 # QR
-class QrListCreateView(ListModelMixin, CreateModelMixin, generics.GenericAPIView):
+class QrListCreateView(ListCreateAPIView):
     # authentication_classes = [authentication.TokenAuthentication]
     # permission_classes = [permissions.IsAuthenticated,]
     queryset = QrInfo.objects.all()
     serializer_class = QrInfoSerializer    
 
-    def get(self, request, *args, **kwargs):
-        """
-        QR 코드를 조회하는 API입니다.
-        """
-        return self.list(request, *args, **kwargs)
 
     def post(self, request, *args, **kwargs):
         """
@@ -30,7 +25,6 @@ class QrListCreateView(ListModelMixin, CreateModelMixin, generics.GenericAPIView
         start_date, start_time = request.data['start_date'].split('T')
         end_date, end_time = request.data['end_date'].split('T')
         qr_content = f'{start_date}&{end_date}'
-
 
         # create qr    
         '''
@@ -43,7 +37,7 @@ class QrListCreateView(ListModelMixin, CreateModelMixin, generics.GenericAPIView
         return self.create(request, *args, **kwargs)
 
     
-class QrDetailView(RetrieveModelMixin, DestroyModelMixin, generics.GenericAPIView):
+class QrDetailView(RetrieveDestroyAPIView):
     queryset = QrInfo.objects.all()
     serializer_class = QrInfoSerializer    
 

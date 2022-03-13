@@ -1,12 +1,11 @@
 from rest_framework import serializers
 from .models import InOutLog, QrInfo
 
-
+# QR관리
 class QrInfoSerializer(serializers.ModelSerializer):
     class Meta:
         model = QrInfo
         fields = '__all__'
-        # exclude = ['qr_content', 'qr_link']
 
 
 class InOutLogSerializer(serializers.ModelSerializer):
