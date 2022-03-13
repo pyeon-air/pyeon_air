@@ -8,10 +8,10 @@ urlpatterns = [
     path('qrinfo/<int:pk>/', views.QrDetailView.as_view(),name='qr-detail'),
 
     # 실시간 입퇴실
-    path('livecheck/', views.InOutLogListAPIView.as_view(), name='livecheck-list'),
-    path('livecheck/<int:pk>/', views.InOutLogListAPIView.as_view(), name='livecheck-detail'),
+    path('inoutcheck/', views.InOutCheckListAPIView.as_view(), name='inoutcheck-list'),
+    path('inoutcheck/<int:pk>/', views.InOutCheckDetailAPIView.as_view(), name='inoutcheck-detail'),
 
-    # 출석 확인
+    # # 출석 확인
     path('attendance/', views.AttendanceListAPIView.as_view(), name='attendance-list'),
-    path('attendance/<int:pk>/', views.AttendanceListAPIView.as_view(), name='attendance-detial')
+    path('attendance/<int:pk>/', views.AttendanceDetailAPIView.as_view(), name='attendance-detial')
 ]
