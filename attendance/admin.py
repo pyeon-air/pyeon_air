@@ -1,5 +1,5 @@
 from django.contrib import admin
-from .models import In_out_log
+from .models import InOutLog
 # Register your models here.
 
-admin.site.register(In_out_log)
+admin.site.register(InOutLog)

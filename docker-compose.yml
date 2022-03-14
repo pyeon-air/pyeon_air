@@ -41,32 +41,13 @@ services:
     # && python manage.py runserver react # 이게 안먹는 이유는 react와 관련 있을 듯. 
     volumes:
       - ./:/project/
-
-    stdin_open: true
-    tty: true
-
-  # client:
-  #     build:
-  #       context: ./client
-  #     container_name: client
-  #     restart: "on-failure"
-  #     expose:
-  #       - 3000
-  #     volumes:
-  #       - './client:/app'
-  #       - '/app/node_modules'
-  #     environment: 
-  #       - NODE_ENV=development 
-  #       - CHOKIDAR_USEPOLLING=true
-  #     stdin_open: true
-  #     tty: true
-  
-  # frontend:
-  #   build: 
-  #     context: .
-  #     dockerfile: ./compose/react/Dockerfile-dev
-  #   volumes:
-  #     - ./frontend/:/app/frontend/
-  #   ports:
-  #     - "4000:3000"
-  #   command: ["npm", "start"]
+  react:
+    build: 
+      context: .
+      dockerfile: ./compose/react/Dockerfile-react
+    volumes:
+      - /project/frontend/reactapp/node_modules
+      - ./frontend/reactapp:/project/frontend/reactapp
+    ports:
+      - "3000:3000"
+    command: ['npm', 'start']
