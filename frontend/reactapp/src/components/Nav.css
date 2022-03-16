@@ -1,0 +1,22 @@
+.nav{
+    position: absolute;
+    top: 22px;
+    right: 200px;
+    z-index: 99;
+ 
+}
+a {color: #fff; text-decoration: none; outline: none}
+
+a:hover, a:active {text-decoration: none; color:#fff;}
+
+.nav li a{
+   color: #000;
+   padding: 0 10px;
+   
+}
+
+.logout{
+    background: none;
+    color: #000;
+}
+
