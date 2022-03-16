@@ -10,7 +10,7 @@ const JWT_EXPIRY_TIME = 24 * 3600 * 1000; // 만료 시간 (24시간 밀리 초�
 
 
 const cookies = new Cookies();
-axios.defaults.withCredentials = true;
+
 
 
 const InputId = styled.input`
@@ -34,6 +34,7 @@ border-radius: 25px;
 margin:20px 0;
 `;
 const UserLogin = () => {
+  axios.defaults.withCredentials = true;
   const history = useNavigate();
   const [isLoggedIn ,setIsLoggedIn] = useState(false)
   const [cookies ,setCookies] = useState(getCookie("refresh_token"))
@@ -65,7 +66,8 @@ const UserLogin = () => {
       history('/login')
      }
   },[])
-  const URL = 'http://localhost:8000/member/post_login'
+  const URL = 'http://localhost:8000/member/api/token'
+  const refreshTokenUrl = 'http://localhost:8000/member/api/token/refresh'
           const onRememberHandler = (e) =>{
             setInputChecked(!inputChecked)
           }
@@ -77,19 +79,30 @@ const UserLogin = () => {
                 [name]:value, //  Computed property names 문법
               })
           }
-
+         
+      
           const  onClickLogin = async () => {
             const response = await axios.post(URL,{
               username: account.username,
-              password: account.password
+              password: account.password,
           }).then((res)=>{
-            console.log(res)
             setIsLoggedIn(true)
-            const { token } = res.data;
+            console.log(res)
+            const { token,user } = res.data;
             const cookieDate = new Date()
-            cookieDate.setDate(cookieDate.getDate() + 1); // 하루동안 유지
-            setCookie('refresh_token', token, { sameSite: 'strict',path  : '/', expires: cookieDate} );
+            cookieDate.setMinutes(cookieDate.getMinutes() + 30); // 하루동안 유지
+            setCookie('token', token, {samesite:"None",path  : '/', expires: cookieDate, secure : true} );
             axios.defaults.headers.common['Authorization'] = 'Bearer ' + token;
+            // console.log(res.data.token)
+            let refresh_token = res.data.token
+            const getRefreshToken =  axios.post(refreshTokenUrl,{
+              token:refresh_token
+            }).then(res =>{
+              console.log(res)
+              setCookie('refresh_token', refresh_token, {samesite:"None",path  : '/', expires: cookieDate, secure : true} );
+            }).catch(error =>{
+              console.log(error)
+            })
             history('/Mypage')
             if(inputChecked){
               if(rememerId){
