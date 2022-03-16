@@ -11,19 +11,19 @@ import Sidebar from '../components/gnb/Sidebar';
 const Mypage = () => {
     const [loading, setLoading] = useState(false)
     const history = useNavigate();
-    const [cookies ,setCookies] = useState(getCookie("refresh_token"))
+    const [cookies ,setCookies] = useState(getCookie("token"))
     const [activeKey, setActiveKey] = useState('1');
     const [openKeys, setOpenKeys] = useState(['3', '4']);
  useEffect(() =>{
     setTimeout(()=>{
         setLoading(true)
       },1000)
-    //  if(cookies){
-    //     history('/mypage')
-    // }else{
-    //     history('/Login')
+     if(cookies){
+        history('/mypage')
+    }else{
+        history('/Login')
     
-    // }
+    }
  },[cookies])
     return (
         (loading ? 
