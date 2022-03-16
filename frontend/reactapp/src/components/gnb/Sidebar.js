@@ -1,8 +1,9 @@
-import React, { useState} from 'react';
+import React, { useEffect, useState} from 'react';
 import { act } from 'react-dom/test-utils';
 import './Nav.css'
 import { Link } from 'react-router-dom';
 import styled,{css} from 'styled-components'
+import $, { isFunction } from "jquery"
 
 
 const SidebarWrapUl = styled.ul `
@@ -59,10 +60,16 @@ const Sidebar = () => {
         })
       }
   };
+  
+  useEffect(()=>{
+    $("[name='linkUrl'] > li").on("click", function(){
+      window.location.href = $(this).attr('to');
+    });
+  });
 
   return (
     (
-       <>
+      <>
       <div className='sidebar_wrap'>
         <img src='/images/gnb/nav_bg_icon.png' className="nav_bg_icon"/>
           <SidebarWrapUl>
@@ -71,10 +78,10 @@ const Sidebar = () => {
                 <NavIcon src='/images/gnb/attendance_icon.png' /> 
                   <span>출석관리</span>
                   </SidebarSpan>
-                <ul className="sub">
-                <li>- QR 관리</li>
+                <ul className="sub" name="linkUrl" >
+                <li to='/manage/attend/qrManage'>- QR 관리</li>
                 <li>- 입퇴실인원 현황</li>
-                <li>- 출석확인</li>
+                <li to='/manage/attend/attendState'>- 출석확인</li>
                 </ul>
             </li>
             <li  className={active["student"] ? "active contents" :"contents"}  id="student">
@@ -82,11 +89,11 @@ const Sidebar = () => {
             <NavIcon src='/images/gnb/student_icon.png' /> 
                   <span>수강생관리</span>
             </SidebarSpan>
-            <ul className="sub">
-               <li>- 입교생 관리카드</li>
-                <li>- 학습성취도</li>
-                <li>- 수료처리</li>
-                <li>- 수강생 상담</li>
+            <ul className="sub" name="linkUrl" >
+                <li to='/manage/student/studentManage'>- 입교생 관리카드</li>
+                <li to='/manage/student/academicAchieve'>- 학습성취도</li>
+                <li to='/manage/student/completeProcess'>- 수료처리</li>
+                <li to='/manage/student/studentConsult'>- 수강생 상담</li>
               </ul>
             </li>
             <li  className={active["lecture"] ? "active contents" :"contents"}  id="lecture" >
@@ -94,9 +101,10 @@ const Sidebar = () => {
               <NavIcon src='/images/gnb/lecture_icon.png' /> 
                   <span>강의관리</span>
               </SidebarSpan>
-              <ul className="sub">
-               <li>- 실시간 강의</li>
-                <li>- 녹화강의</li>
+              <ul className="sub" name="linkUrl" >
+                <li to='manage/lecture/liveLecture'>- 실시간 강의</li>
+                <li to='manage/lecture/recordLecture'>- 녹화 강의</li>
+                <li to='manage/lecture/createLecture'>- 강의 개설</li>
               </ul>
             </li>
             <li  className={active["learning"] ? "active contents" :"contents"}  id="learning" >
@@ -104,9 +112,9 @@ const Sidebar = () => {
               <NavIcon src='/images/gnb/learning_icon.png' /> 
                   <span>학습자료</span>
               </SidebarSpan>
-             <ul className="sub">
-               <li>- 강의자료</li>
-                <li>- 과제</li>
+            <ul className="sub" name="linkUrl" >
+                <li to='/manage/learn/lectureData'>- 강의자료</li>
+                <li to='/manage/learn/report'>- 과제</li>
               </ul>
             </li>
           </SidebarWrapUl>
