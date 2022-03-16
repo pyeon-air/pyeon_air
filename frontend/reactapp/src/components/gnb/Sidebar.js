@@ -64,11 +64,11 @@ const Sidebar = () => {
     (
        <>
       <div className='sidebar_wrap'>
-        <img src='./images/gnb/nav_bg_icon.png' className="nav_bg_icon"/>
+        <img src='/images/gnb/nav_bg_icon.png' className="nav_bg_icon"/>
           <SidebarWrapUl>
             <li className={active["attendance"] ? "active contents" :"contents"} id="attendance">
               <SidebarSpan onClick={handleClick} >
-                <NavIcon src='./images/gnb/attendance_icon.png' /> 
+                <NavIcon src='/images/gnb/attendance_icon.png' /> 
                   <span>출석관리</span>
                   </SidebarSpan>
                 <ul className="sub">
@@ -79,7 +79,7 @@ const Sidebar = () => {
             </li>
             <li  className={active["student"] ? "active contents" :"contents"}  id="student">
             <SidebarSpan onClick={handleClick}>
-            <NavIcon src='./images/gnb/student_icon.png' /> 
+            <NavIcon src='/images/gnb/student_icon.png' /> 
                   <span>수강생관리</span>
             </SidebarSpan>
             <ul className="sub">
@@ -91,7 +91,7 @@ const Sidebar = () => {
             </li>
             <li  className={active["lecture"] ? "active contents" :"contents"}  id="lecture" >
               <SidebarSpan onClick={handleClick} > 
-              <NavIcon src='./images/gnb/lecture_icon.png' /> 
+              <NavIcon src='/images/gnb/lecture_icon.png' /> 
                   <span>강의관리</span>
               </SidebarSpan>
               <ul className="sub">
@@ -101,7 +101,7 @@ const Sidebar = () => {
             </li>
             <li  className={active["learning"] ? "active contents" :"contents"}  id="learning" >
             <SidebarSpan onClick={handleClick} > 
-              <NavIcon src='./images/gnb/learning_icon.png' /> 
+              <NavIcon src='/images/gnb/learning_icon.png' /> 
                   <span>학습자료</span>
               </SidebarSpan>
              <ul className="sub">
