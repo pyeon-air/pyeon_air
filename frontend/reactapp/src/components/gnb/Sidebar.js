@@ -52,7 +52,7 @@ const Sidebar = () => {
         })
 
       }
-      else if(target.className  == 'contents' || target.parentElement.className == 'contents'){
+      else{
         setActive({  
           [target.id] : true,
           [target.parentElement.id] : true
