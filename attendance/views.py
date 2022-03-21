@@ -7,7 +7,7 @@ from attendance import serializers
 from attendance.utils import create_qrcode
 
 from attendance.models import QrInfo, InCheck, OutCheck, Attendance
-from attendance.serializers import QrInfoListSerializer, QrInfoSerializer, InCheckSerializer, OutCheckSerializer, AttendanceSerializer, InOutCheckSerializer
+from attendance.serializers import QrInfoListSerializer, QrInfoSerializer, InCheckSerializer, OutCheckSerializer, AttendanceSerializer, InOutCheckSerializer, InOutCheckDetailSerializer,InOutListSerializer
 
 from rest_framework.decorators import permission_classes, authentication_classes
 from rest_framework.permissions import IsAuthenticated, AllowAny, IsAdminUser
@@ -74,38 +74,56 @@ class InOutCheckListAPIView(APIView):
     @swagger_auto_schema(tags=['입퇴실 인원 현황'], query_serializer=InOutCheckSerializer, responses={200: "Success"})
     def get(self, request, *args, **kwargs):
         '''
-        입/퇴실 구분, 입실 완료/미완료 조회 API(작업중)
+        입/퇴실 구분, 입실 완료/미완료 조회 API
         '''
         category = request.GET.get('category', '입실')
-        status = request.GET.get('status', 'false')
+        state = request.GET.get('state', 'all')
 
-        if status == 'true':
-            status = True
-        else:
-            status = False
+        if state == 'true':
+            state = True
+        elif state == 'false':
+            state = False
 
-        if category == '입실':
-            queryset = InCheck.objects.filter(status=status)
-            print('queryset : ', queryset)
-            serializer = InCheckSerializer(instance=queryset)
-            print('serializer data : ', serializer.data)
-        else:
-            queryset = OutCheck.objects.filter(status=status)
-            serializer = OutCheckSerializer(instance=queryset)
+        if category == 'in':
+            if state == 'all':
+                queryset = InCheck.objects.all()
+            else:
+                queryset = InCheck.objects.filter(state=state)
+            serializer = InCheckSerializer(instance=queryset, many=True)
+        
+        if category == 'out':
+            if state == 'all':
+                queryset = OutCheck.objects.all()
+            else:
+                queryset = OutCheck.objects.filter(state=state)
+            serializer = OutCheckSerializer(instance=queryset, many=True)
 
-        return Response(serializer.data)
+        return Response(serializer.data, status=status.HTTP_200_OK)
 
 
+@permission_classes([AllowAny])
 class InOutCheckDetailAPIView(APIView):
     queryset = InCheck.objects.all()
-    serializer_class = InOutCheckSerializer
+    serializer_class = InOutCheckDetailSerializer
 
-    @swagger_auto_schema(tags=['입퇴실 인원 현황'], query_serializer=InOutCheckSerializer, responses={200: "Success"})
+    @swagger_auto_schema(tags=['입퇴실 인원 현황'], query_serializer=InOutCheckDetailSerializer, responses={200: "Success"})
     def get(self, request, *args, **kwargs):
         '''
-        특정 인원 입/퇴실 구분, 입실 완료/미완료 조회 API(작업중)
+        특정 인원 입/퇴실 구분, 입실 완료/미완료 조회 API
         '''
-        return super().list(request, *args, **kwargs)
+        course_id = request.GET.get('course_id', "")
+        # username = request.GET.get('username', "")
+
+        inList = InCheck.objects.filter(user__course_id=course_id)
+        outList = OutCheck.objects.filter(user__course_id=course_id)
+
+        data = {
+            'inList': inList,
+            'outList': outList
+        }
+
+        serializer = InOutListSerializer(instance=data)
+        return Response(serializer.data, status=status.HTTP_200_OK)
     
     
 
