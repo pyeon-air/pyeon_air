@@ -37,12 +37,11 @@ line-height: 1;
 
 const Sidebar = () => {
   const [active, setActive] = useState({
-    "attendance": true,
+    "attendance": false,
     "student": false,
     "lecture": false,
     "learning": false,
   });
-
 
   const handleClick = e => {
     let target = e.target.parentElement
@@ -70,6 +69,7 @@ const Sidebar = () => {
   return (
     (
       <>
+      <img src='/main_logo.png' className="sidebar_menu_logo"/>
       <div className='sidebar_wrap'>
         <img src='/images/gnb/nav_bg_icon.png' className="nav_bg_icon"/>
           <SidebarWrapUl>
@@ -102,9 +102,9 @@ const Sidebar = () => {
                   <span>강의관리</span>
               </SidebarSpan>
               <ul className="sub" name="linkUrl" >
-                <li to='manage/lecture/liveLecture'>- 실시간 강의</li>
-                <li to='manage/lecture/recordLecture'>- 녹화 강의</li>
-                <li to='manage/lecture/createLecture'>- 강의 개설</li>
+                <li to='/manage/lecture/liveLecture'>- 실시간 강의</li>
+                <li to='/manage/lecture/recordLecture'>- 녹화 강의</li>
+                <li to='/manage/lecture/createLecture'>- 강의 개설</li>
               </ul>
             </li>
             <li  className={active["learning"] ? "active contents" :"contents"}  id="learning" >
