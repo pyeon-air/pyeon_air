@@ -12,8 +12,9 @@ import Mypage from './pages/Mypage';
 // 운영진 페이지 목록
 import Dashboard from './pages/Manage/Dashboard';
 // 1. 출석관리
-import AttendState from './pages/Manage/Attend/AttendState';
 import QrManage from './pages/Manage/Attend/QrManage';
+import CheckInOut from './pages/Manage/Attend/CheckInOut';
+import AttendState from './pages/Manage/Attend/AttendState';
 // 2. 수강생관리
 import StudentManage from './pages/Manage/Student/StudentManage';
 import AcademicAchieve from './pages/Manage/Student/AcademicAchieve';
@@ -81,7 +82,7 @@ function App() {
             <Route path="/manage/dashboard"  element={ <Dashboard />} />
               {/* 출석관리 */}
                 <Route path="/manage/attend/qrManage"  element={ <QrManage />} />
-                {/* TODO : 입퇴실인원 현황 소스코드 입력필요 */}
+                <Route path="/manage/attend/checkInOut"  element={ <CheckInOut />} />
                 <Route path="/manage/attend/attendState"  element={ <AttendState />} />
               {/* 수강생관리 */}
                 <Route path="/manage/student/studentManage"  element={ <StudentManage />} />

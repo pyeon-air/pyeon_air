@@ -1,0 +1,139 @@
+header{
+    background-color: #fff;
+    background-image: url();
+}
+
+h2{
+    margin-top: 40px;
+    padding: 30px;
+}
+
+.debug{
+    /* border: 1px solid black !important; */
+}
+
+a{
+    cursor:pointer;
+}
+.pointer{
+    cursor:pointer;
+}
+
+.attendState_wrap{
+    margin: 0 auto;
+    text-align: center;
+    margin-top: 40px;
+}
+.attendState_tab{
+    width:900px;
+    margin: 0 auto;
+    display:flex;
+
+}
+.attendState_tab_daily{
+    float:left;
+    width:300px;
+    height:50px;
+    line-height: 50px;
+    border-radius: 30px 30px 0 0;
+    background-color: #fff;
+}
+.attendState_tab_monthly{
+    float:left;
+    width:300px;
+    height:50px;
+    line-height: 50px;
+    border-radius: 30px 30px 0 0;
+    background-color: #29c39f;
+}
+.attendState_tab_yearly{
+    display:none;
+    float:left;
+    width:300px;
+    height:50px;
+    line-height: 50px;
+    border-radius: 30px 30px 0 0;
+    background-color: #29c39f;
+}
+
+.completeProcess{
+    margin: 0 auto;
+    width:900px;
+    height:650px;
+    border-radius: 0 30px 30px 30px;
+    background-color: #fff;
+    padding:30px;
+}
+
+.completeProcess_footer{
+    text-align: left;
+    font-size:20px;
+    height:50px;
+    margin: 20px 60px 0 90px;
+}
+.completeProcess_footer > span:nth-child(odd){
+    margin-right:10px;
+}
+.completeProcess_footer > span:nth-child(2n){
+    margin-right:10px;
+}
+.completeProcess_footer > span > button{
+    /* margin-right:10px; */
+    width:120px;
+    height:30px;
+    background-color: orange;
+    font-size:15px;
+    float:right;
+    /* line-height:50px; */
+}
+
+.completeProcess_list_header{
+    margin: 0 auto;
+}
+.completeProcess_list_header{
+    width:700px;
+    height:50px;
+    text-align: center;
+    margin-left:60px;
+}
+.completeProcess_list_body{
+    width: 800px;
+    height:500px;
+    padding:10px;
+    overflow-y: auto;
+    margin: 0 auto;
+    border-top: 2px solid gray;
+    border-bottom: 2px solid gray;
+}
+
+.completeProcess_table_h > tr > th{
+    width:800px;
+    line-height:50px;
+}
+
+.completeProcess_table_b > tr{
+    border-top: 1px solid gray;
+    border-bottom: 1px solid gray;
+}
+.completeProcess_table_b > tr:first-child{
+    border-top:none;
+}
+.completeProcess_table_b > tr:last-child{
+    border-bottom:none;
+}
+.completeProcess_table_b > tr > td > button.wait{
+    margin:10px;
+    width:100px;
+    height:30px;
+    background-color: orange;
+    font-size:15px;
+    color:#fff;
+}
+.completeProcess_table_b > tr > td > button.done{
+    margin:10px;
+    width:100px;
+    height:30px;
+    background-color: lightgray;
+    font-size:15px;
+    color:#000;
+}
