@@ -129,5 +129,12 @@ li{
     top: -100px;
     left: 50px;
     width: 150px;
-    /* height:100px; */
+    cursor: pointer;
+}
+
+.content{
+    width: 1100px;
+    text-align: center;
+    margin: 0 auto;
+    height: 100%;
 }

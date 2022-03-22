@@ -64,6 +64,10 @@ const Sidebar = () => {
     $("[name='linkUrl'] > li").on("click", function(){
       window.location.href = $(this).attr('to');
     });
+
+    $('.sidebar_menu_logo').on("click", function(){
+      window.location.href = '/manage/dashboard';
+    });
   });
 
   return (
