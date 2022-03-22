@@ -5,7 +5,7 @@ import { useNavigate } from 'react-router';
 
 //layout form & css
 import Loader from '../../components/Loader';
-    import Header from '../../components/header/Header';
+import Header from '../../components/header/Header';
 import Sidebar from '../../components/gnb/Sidebar';
 import '../Mypage.css'
 
@@ -49,7 +49,7 @@ const Mypage = () => {
                                 <span>파이썬 기초</span>
                                 <span>
                                     <input type="checkbox" id="checkbox" />
-                                    <label for="checkbox"><span></span></label>
+                                    <label id="checkbox_label" for="checkbox"><span></span></label>
                                 </span>
                             </div>
                             <div className="dashboard_card_1_area2">
@@ -89,7 +89,6 @@ const Mypage = () => {
                                     <span>강의명 : </span>
                                     <span>파이썬 기초</span>
                                 </div>
-
                                 <div className="dashboard_card_4_area1_data">
                                     <span>강의자료</span>
                                     <div></div>
@@ -98,7 +97,6 @@ const Mypage = () => {
                                         <span>강의자료.pdf</span>
                                     </div>
                                 </div>
-
                                 <div className="dashboard_card_4_area1_report">
                                     <span>과제</span>
                                     <div></div>
