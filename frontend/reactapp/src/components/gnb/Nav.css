@@ -123,3 +123,11 @@ li{
     bottom: 100px;
     left: 30px;
 }
+
+.sidebar_menu_logo{
+    position:absolute;
+    top: -100px;
+    left: 50px;
+    width: 150px;
+    /* height:100px; */
+}
