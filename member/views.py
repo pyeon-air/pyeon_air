@@ -29,7 +29,7 @@ class UserLogInAPI(APIView):
         user = serializer.validated_data
         if user['username'] == "None":
             return Response(
-                {"message": "fail"}, status=status.HTTP_401_UNAUTHORIZED
+                {"message": "로그인이 실패했습니다. 아이디와 비밀번호를 확인해주세요."}, status=status.HTTP_401_UNAUTHORIZED
                 )
         
         return JsonResponse(

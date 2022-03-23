@@ -15,9 +15,14 @@ Including another URLconf
 """
 from django.contrib import admin
 from django.urls import path, re_path, include
+
+from django.conf.urls.static import static
+from django.conf import settings
+
 from rest_framework import permissions
 from drf_yasg.views import get_schema_view
 from drf_yasg import openapi
+
 
 schema_view = get_schema_view(
    openapi.Info(
@@ -37,9 +42,15 @@ urlpatterns = [
     path('admin/', admin.site.urls),
     # path('api/account/all', AccountListAPI.as_view()),
     # path('api/member/all', TestAPI.as_view()),
-    re_path(r'^management/', include('management.urls')),
-    re_path(r'^member/', include('member.urls')),
+
+    path('attendance/', include('attendance.urls')),
+
     re_path(r'^swagger(?P<format>\.json|\.yaml)$', schema_view.without_ui(cache_timeout=0), name='schema-json'),
     re_path(r'^swagger/$', schema_view.with_ui('swagger', cache_timeout=0), name='schema-swagger-ui'),
     re_path(r'^redoc/$', schema_view.with_ui('redoc', cache_timeout=0), name='schema-redoc'),
+    re_path(r'^management/', include('management.urls')),
+    re_path(r'^member/', include('member.urls')),
 ]
+
+if settings.DEBUG:
+    urlpatterns += static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)

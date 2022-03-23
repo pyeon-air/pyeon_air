@@ -1,0 +1,246 @@
+header{
+    background-color: #fff;
+    background-image: url();
+}
+
+h2{
+    margin-top: 40px;
+    padding: 30px;
+}
+
+.debug{
+    /* border: 1px solid black !important; */
+}
+a{
+    cursor:pointer;
+}
+
+.dashboard_card{
+    width: 1000px;
+    height: 800px;
+    margin: 0 auto;
+    padding: 40px 0px;
+}
+.dashboard_card_1{
+    width:580px;
+    height:300px;
+    float:left;
+    border-radius: 3rem;
+    border: 1px solid black !important;
+    margin: 10px;
+    padding: 70px 70px 0 20px;
+}
+.dashboard_card_1_area1{
+    margin-bottom: 40px;
+}
+.dashboard_card_1_area1 > span:nth-child(1){
+    padding-right: 20px;
+    font-size: 25px;
+}
+.dashboard_card_1_area1 > span:nth-child(2){
+    font-size: 25px;
+}
+.dashboard_card_1_area1 > span:nth-child(3){
+    padding-right: 20px;
+    font-size: 25px;
+}
+
+/* 체크박스 ON/OFF 모양 */
+input[type="checkbox"]#checkbox {
+    position: absolute;
+    visibility: hidden;
+}
+
+#checkbox_label {
+    display: block;
+    position: absolute;
+    width: 60px;
+    height: 34px;
+    border-radius: 17px;
+    background-color: #ddd;
+    transition-duration: 0.2s;
+    top:-10px;
+    left: 0px;
+}
+
+#checkbox_label span {
+    position: absolute;
+    left: 3px;
+    top: 3px;
+    z-index: 1;
+    width: 28px;
+    height: 28px;
+    border-radius: 50%;
+    background-color: #fff;
+    transition-duration: 0.2s;
+}
+
+#checkbox_label:before,
+#checkbox_label:after{
+    position: absolute;
+    top: 0;
+    width: 34px;
+    font-size: 11px;
+    line-height: 34px;
+    color: #fff;
+    text-align: center;
+}
+
+#checkbox_label:before {
+    left: 0;
+    content: 'ON';
+}
+
+#checkbox_label:after {
+    right: 0;
+    content: 'OFF';
+}
+
+#checkbox:checked + #checkbox_label {
+    background-color: #00c73c;
+}
+
+#checkbox:checked + #checkbox_label span {
+    transform: translateX(26px);
+}
+
+/* 체크박스 ON/OFF 모양 */
+
+.dashboard_card_1_area2{
+    margin-bottom: 20px;
+    margin-left:40px;
+    float:left;
+}
+.dashboard_card_1_area2 >span:nth-child(1){
+    margin-bottom: 20px;
+    font-size: 50px;
+}
+.dashboard_card_1_area2 > span > span:nth-child(1){
+    font-size: 50px;
+}
+.dashboard_card_1_area2 > span > span:nth-child(2){
+    margin-bottom: 20px;
+    font-size: 35px;
+}
+.dashboard_card_1_area2 > span:nth-child(3){
+    font-size: 40px;
+}
+.dashboard_card_1_area3{
+    float:right;
+}
+.dashboard_card_1_area3 > div:nth-child(1){
+    /* float:left; */
+    text-align: left;
+    margin-bottom: 30px;
+}
+.dashboard_card_1_area3 > div:nth-child(1) > a{
+    font-size: 25px;
+    color: #000;
+    margin-bottom: 10px;
+}
+.dashboard_card_1_area3 > div:nth-child(1) > span{
+    font-size: 25px;
+}
+.dashboard_card_1_area3 > div:nth-child(2){
+    /* float:right; */
+    text-align: left;
+}
+.dashboard_card_1_area3 > div:nth-child(2) > a{
+    font-size: 25px;
+    color: #000;
+}
+
+
+.dashboard_card_2{
+    width:380px;
+    height:300px;
+    float:right;
+    border-radius: 3rem;
+    border: 1px solid black !important;
+    margin: 10px;
+    padding: 70px 0 0 20px;
+}
+.dashboard_card_2_area1 > span:nth-child(1){
+    font-size: 25px;
+}
+.dashboard_card_2_area1 > span:nth-child(2){
+    padding-right: 20px;
+    font-size: 25px;
+}
+
+
+.dashboard_card_3{
+    width:580px;
+    height:300px;
+    float:left;
+    border-radius: 3rem;
+    border: 1px solid black !important;
+    margin: 10px;
+    padding: 20px 0 0 70px;
+}
+.dashboard_card_3_area1{
+    text-align: left;
+}
+.dashboard_card_3_area1 > span{
+    font-size: 25px;
+}
+.dashboard_card_3_area1 > div:nth-child(2){
+    width: 250px;
+    border-bottom: 1px solid black !important;
+    margin-top: 10px;
+}
+
+
+
+.dashboard_card_4{
+    width:380px;
+    height:300px;
+    float:right;
+    border-radius: 3rem;
+    border: 1px solid black !important;
+    margin: 10px;
+    padding: 20px;
+}
+.dashboard_card_4_area1 > .dashboard_card_4_area1_title > span:nth-child(1){
+    font-size: 25px;
+}
+.dashboard_card_4_area1 > .dashboard_card_4_area1_title > span:nth-child(2){
+    padding-right: 20px;
+    font-size: 25px;
+}
+.dashboard_card_4_area1 > div:nth-child(2){
+    text-align: left;
+    margin-top: 30px;
+    margin-bottom: 30px;
+}
+.dashboard_card_4_area1 > .dashboard_card_4_area1_data > div:nth-child(2){
+    width: 150px;
+    border-bottom: 1px solid black !important;
+    margin-top: 5px;
+}
+.dashboard_card_4_area1 > .dashboard_card_4_area1_data > div:nth-child(3){
+    margin-left: 20px;
+    margin-top: 5px;
+}
+.dashboard_card_4_area1 > .dashboard_card_4_area1_data > div > span{
+    color:gray;
+    display: block;
+}
+.dashboard_card_4_area1 > .dashboard_card_4_area1_report{
+    text-align: left;
+    margin-top: 30px;
+    margin-bottom: 30px;
+}
+.dashboard_card_4_area1 > .dashboard_card_4_area1_report > div:nth-child(2){
+    width: 150px;
+    border-bottom: 1px solid black !important;
+    margin-top: 5px;
+}
+.dashboard_card_4_area1 > .dashboard_card_4_area1_report > div:nth-child(3){
+    margin-left: 20px;
+    margin-top: 5px;
+}
+.dashboard_card_4_area1 > .dashboard_card_4_area1_report > div > span{
+    color:gray;
+    display: block;
+}
