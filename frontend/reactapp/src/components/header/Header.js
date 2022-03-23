@@ -42,10 +42,9 @@ const Header = (props) => {
     
     if( url.indexOf('dashboard') > -1 ) menuText = "대시보드";
     else if( url.indexOf('qrManage') > -1 ) menuText = "QR관리";
-    // TODO : 입퇴실인원 현황 추가필요
-    // else if( url.indexOf('qrManage') > -1 ) menuText = "QR관리";
+    else if( url.indexOf('checkInOut') > -1 ) menuText = "입퇴실인원 현황";
     else if( url.indexOf('attendState') > -1 ) menuText = "출석확인";
-    else if( url.indexOf('studentManage') > -1 ) menuText = "입교생관리카드";
+    else if( url.indexOf('studentManage') > -1 ) menuText = "입교생 관리카드";
     else if( url.indexOf('academicAchieve') > -1 ) menuText = "학습성취도";
     else if( url.indexOf('completeProcess') > -1 ) menuText = "수료처리";
     else if( url.indexOf('studentConsult') > -1 ) menuText = "수강생 상담";
