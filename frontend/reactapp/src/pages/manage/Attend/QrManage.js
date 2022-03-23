@@ -13,6 +13,9 @@ import '../../Mypage.css'
 import './QrManage.css';
 
 // import Accordianwrap from '../components/gnb/Accordianwrap'
+
+
+
 const Mypage = () => {
     const [loading, setLoading] = useState(false)
     const history = useNavigate();
@@ -31,7 +34,7 @@ const Mypage = () => {
         // }
     },[cookies])
     return (
-        (loading ? 
+       
         <div className='mypage'>    
             <div className='aside'>
             <div className="nav-wrapper">
@@ -41,14 +44,59 @@ const Mypage = () => {
             <div className='content'>
                 <Header />
             <div>
-                <div>
-                QrManage
+                <div className='container'>
+                <div className='box'>
+                    <div className=''>
+                        <h3>
+                            구분
+                        </h3>
+                        <div className='check_inout'>
+                            <div>
+                                <input type="radio" id="checkIn" name='radio-group'></input>
+                                <label for="checkIn">입실</label>
+                            </div>
+                            <div>
+                                <input type="radio" id="checkOut"name='radio-group'></input>
+                                <label for="checkOut">퇴실</label>
+                            </div>
+                        </div>
+                        <div className='calendar_wrap'>
+                            <span>
+                                반복
+                            </span>
+                            <div>
+                            <img src='/images/calendar.png' className="calendar_img"/>
+                            </div>
+                        </div>
+                    </div>
+                    <div>
+                        <span>노출시간</span>
+                        <div>
+                            <input type="time"></input>
+                        </div>
+                        <span>~</span>
+                        <div>
+                            <input type="time"></input>
+                        </div>
+                    </div>
+                    <div>
+                        <img></img>
+                        <span>입실 08:30 ~ 09:10</span>
+                        <div>
+                            <input placeholder='QR코드와 함께 표시될 문구를 입력하세요.'></input>
+                        </div>
+                        <div>
+                            <button></button>   
+                            <button></button>
+                        </div>
+                    </div>
+                </div>
                 </div>
             </div>
             </div>
     
         </div>
-        :  <Loader type="spin" color="RGB 값" /> )
+      
     );
 };
 
