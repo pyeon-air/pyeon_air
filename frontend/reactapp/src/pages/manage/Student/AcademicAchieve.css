@@ -1,0 +1,302 @@
+header{
+    background-color: #fff;
+    background-image: url();
+}
+
+h2{
+    margin-top: 40px;
+    padding: 30px;
+}
+
+.debug{
+    /* border: 1px solid black !important; */
+}
+
+a{
+    cursor:pointer;
+}
+.pointer{
+    cursor:pointer;
+}
+
+.academicAchieve_wrap{
+    margin: 0 auto;
+    text-align: center;
+    margin-top: 40px;
+    height:800px;
+    overflow-y:auto;
+}
+.academicAchieve_tab{
+    width:900px;
+    margin: 0 auto;
+    display:flex;
+
+}
+.academicAchieve_tab_daily{
+    float:left;
+    width:300px;
+    height:50px;
+    line-height: 50px;
+    border-radius: 30px 30px 0 0;
+    background-color: #fff;
+}
+.academicAchieve_tab_monthly{
+    float:left;
+    width:300px;
+    height:50px;
+    line-height: 50px;
+    border-radius: 30px 30px 0 0;
+    background-color: #29c39f;
+}
+.academicAchieve_tab_yearly{
+    display:none;
+    float:left;
+    width:300px;
+    height:50px;
+    line-height: 50px;
+    border-radius: 30px 30px 0 0;
+    background-color: #29c39f;
+}
+
+.academicAchieve{
+    margin: 0 auto;
+    width:900px;
+    height:350px;
+    border-radius: 30px 30px 30px 30px;
+    background-color: #fff;
+    padding:30px;
+    margin-bottom:50px;
+    display:none;
+}
+
+.academicAchieve_title{
+    text-align: left;
+    font-size:25px;
+}
+.academicAchieve_title > span:nth-child(2), .academicAchieve_title > span:nth-child(3){
+    margin-left:2px;
+    font-size:20px;
+}
+.academicAchieve_title > span:nth-child(4){
+    margin-left:10px;
+    font-size:15px;
+}
+.academicAchieve_search{
+    height:150px;
+    padding:10px;
+    margin:10px;
+    border-radius: 30px;
+    background-color: #f1f5f7b6;
+}
+.academicAchieve_search_radio{
+    margin-top:10px;
+    margin-left:50px;
+    height:50px;
+    text-align: left;
+    line-height: 35px;
+}
+.academicAchieve_search_radio > div:nth-child(1) > span{
+    margin-right:135px;
+}
+.academicAchieve_search_radio > div:nth-child(2) > label{
+    margin-right:35px;
+}
+.academicAchieve_search_student{
+    margin-top:10px;
+    margin-left:50px;
+    height:50px;
+    text-align: left;
+    line-height: 50px;
+}
+.academicAchieve_search_student > span, input{
+    margin-right:10px;
+}
+.academicAchieve_search_student > select{
+    margin-right:15px;
+    width:100px;
+    text-align: center;
+}
+.academicAchieve_search_student > button{
+    margin-top:10px;
+    width:100px;
+    height:30px;
+    background-color: lightgray;
+    font-size:15px;
+    color:#000;
+}
+.academicAchieve_list{
+    height:330px;
+    padding:10px;
+    margin:10px;
+}
+.academicAchieve_list_cntnt{
+    margin: 0 auto;
+    overflow-y: auto;
+    height:250px;
+    border-bottom: 1px solid black;
+}
+.academicAchieve_list_cntnt > .academicAchieve_list_cntnt_item > span{
+    margin: 0 30px 0 60px;
+    line-height: 50px;
+}
+.academicAchieve_list_cntnt > .academicAchieve_list_cntnt_item > span > button{
+    background-color: orange;
+    font-size:15px;
+    width:75px;
+    height:25px;
+}
+.academicAchieve_list_cntnt > .academicAchieve_list_cntnt_item > span > button.grayColor{
+    background-color: gray;
+    color:black;
+    font-size:15px;
+    width:75px;
+    height:25px;
+}
+.academicAchieve_list_cntnt_item{
+    /* height:50px; */
+    border-bottom: 1px solid black;
+}
+.academicAchieve_list_cntnt_item:last-child{
+    /* height:50px; */
+    border-bottom: none;
+}
+.academicAchieve_total_text{
+    /* height:250px; */
+    float:left;
+    height:30px;
+    padding-left:60px;
+    line-height:50px;
+}
+.academicAchieve_total_cnt{
+    /* height:250px; */
+    float:right;
+    height:30px;
+    padding-right:70px;
+    line-height:50px;
+}
+
+.academicAchieve_table_body{
+    width:100%;
+}
+.academicAchieve_list_header_top{
+    width:900px;
+    height:50px;
+    background-color: orange;
+    border-radius: 30px 30px 0 0;
+    margin:-30px;
+    margin-bottom:0px;
+    text-align: left;
+    display:flex;
+    color:white;
+    line-height:50px;
+}
+.academicAchieve_list_header_top > div:nth-child(1){
+    width:100px;
+    margin-left:50px;
+}
+.academicAchieve_list_header_top > div:nth-child(2){
+    width:700px;
+    font-size:12px;
+    display: grid;
+    line-height: 20px;
+}
+.academicAchieve_list_header_top > div:nth-child(2) > span{
+    /* line-height:0; */
+    /* height:30px; */
+    /* background-color: black; */
+    height: 15px;
+}
+.academicAchieve_list_header{
+    margin: 0 auto;
+}
+.academicAchieve_list_header{
+    width:800px;
+    height:50px;
+    text-align: center;
+    /* margin-left:60px; */
+}
+.academicAchieve_list_body{
+    width: 800px;
+    height:200px;
+    padding:10px;
+    overflow-y: auto;
+    margin: 0 auto;
+    border-top: 2px solid gray;
+    border-bottom: 2px solid gray;
+}
+
+.academicAchieve_table_h > tr > th{
+    width:800px;
+    line-height:50px;
+}
+
+.academicAchieve_table_b > tr{
+    border-top: 1px solid gray;
+    border-bottom: 1px solid gray;
+}
+.academicAchieve_table_b > tr:first-child{
+    border-top:none;
+}
+.academicAchieve_table_b > tr:last-child{
+    border-bottom:none;
+}
+.academicAchieve_table_b > tr > td{
+    line-height:50px;
+    height:50px;
+}
+.academicAchieve_table_b > tr > td > button.wait{
+    margin:10px;
+    width:100px;
+    height:30px;
+    background-color: orange;
+    font-size:15px;
+    color:#fff;
+}
+.academicAchieve_table_b > tr > td > button.done{
+    margin:10px;
+    width:100px;
+    height:30px;
+    background-color: lightgray;
+    font-size:15px;
+    color:#000;
+}
+
+
+.academicAchieveClose{
+    /* border: 1px solid black; */
+    margin: 0 auto;
+    display:block;
+    width:0;
+    height:70px;
+    border-radius: 30px 30px 30px 30px;
+    margin-left:130px;
+    margin-top: 30px;
+}
+.academicAchieveClose_list_header_top{
+    width:900px;
+    height:50px;
+    background-color: white;
+    border-radius: 30px 30px 30px 30px;
+    margin:-30px;
+    margin-bottom:0px;
+    text-align: left;
+    display:flex;
+    color:black;
+    line-height:50px;
+}
+.academicAchieveClose_list_header_top > div:nth-child(1){
+    width:100px;
+    margin-left:50px;
+}
+.academicAchieveClose_list_header_top > div:nth-child(2){
+    width:700px;
+    font-size:12px;
+    display: grid;
+    line-height: 20px;
+}
+.academicAchieveClose_list_header_top > div:nth-child(2) > span{
+    /* line-height:0; */
+    /* height:30px; */
+    /* background-color: black; */
+    height: 15px;
+}

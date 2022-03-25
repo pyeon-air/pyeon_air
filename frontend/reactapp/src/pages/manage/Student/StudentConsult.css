@@ -1,0 +1,227 @@
+header{
+    background-color: #fff;
+    background-image: url();
+}
+
+h2{
+    margin-top: 40px;
+    padding: 30px;
+}
+
+.debug{
+    /* border: 1px solid black !important; */
+}
+
+a{
+    cursor:pointer;
+}
+.pointer{
+    cursor:pointer;
+}
+
+.studentConsult_wrap{
+    margin: 0 auto;
+    text-align: center;
+    margin-top: 40px;
+}
+.studentConsult_tab{
+    width:900px;
+    margin: 0 auto;
+    display:flex;
+
+}
+.studentConsult_tab_daily{
+    float:left;
+    width:300px;
+    height:50px;
+    line-height: 50px;
+    border-radius: 30px 30px 0 0;
+    background-color: #fff;
+}
+.studentConsult_tab_monthly{
+    float:left;
+    width:300px;
+    height:50px;
+    line-height: 50px;
+    border-radius: 30px 30px 0 0;
+    background-color: #29c39f;
+}
+.studentConsult_tab_yearly{
+    display:none;
+    float:left;
+    width:300px;
+    height:50px;
+    line-height: 50px;
+    border-radius: 30px 30px 0 0;
+    background-color: #29c39f;
+}
+
+.studentConsult{
+    margin: 0 auto;
+    width:900px;
+    height:650px;
+    border-radius: 0 30px 30px 30px;
+    background-color: #fff;
+    padding:30px;
+}
+
+.studentConsult_title{
+    text-align: left;
+    font-size:25px;
+}
+.studentConsult_title > span:nth-child(2), .studentConsult_title > span:nth-child(3){
+    margin-left:2px;
+    font-size:20px;
+}
+.studentConsult_title > span:nth-child(4){
+    margin-left:10px;
+    font-size:15px;
+}
+.studentConsult_search{
+    height:150px;
+    padding:10px;
+    margin:10px;
+    border-radius: 30px;
+    background-color: #f1f5f7b6;
+}
+.studentConsult_search_radio{
+    margin-top:10px;
+    margin-left:50px;
+    height:50px;
+    text-align: left;
+    line-height: 35px;
+}
+.studentConsult_search_radio > div:nth-child(1) > span{
+    margin-right:135px;
+}
+.studentConsult_search_radio > div:nth-child(2) > label{
+    margin-right:35px;
+}
+.studentConsult_search_student{
+    margin-top:10px;
+    margin-left:50px;
+    height:50px;
+    text-align: left;
+    line-height: 50px;
+}
+.studentConsult_search_student > span, input{
+    margin-right:10px;
+}
+.studentConsult_search_student > select{
+    margin-right:15px;
+    width:100px;
+    text-align: center;
+}
+.studentConsult_search_student > button{
+    margin-top:10px;
+    width:100px;
+    height:30px;
+    background-color: lightgray;
+    font-size:15px;
+    color:#000;
+}
+.studentConsult_list{
+    height:330px;
+    padding:10px;
+    margin:10px;
+}
+.studentConsult_list_cntnt{
+    margin: 0 auto;
+    overflow-y: auto;
+    height:250px;
+    border-bottom: 1px solid black;
+}
+.studentConsult_list_cntnt > .studentConsult_list_cntnt_item > span{
+    margin: 0 30px 0 60px;
+    line-height: 50px;
+}
+.studentConsult_list_cntnt > .studentConsult_list_cntnt_item > span > button{
+    background-color: orange;
+    font-size:15px;
+    width:75px;
+    height:25px;
+}
+.studentConsult_list_cntnt > .studentConsult_list_cntnt_item > span > button.grayColor{
+    background-color: gray;
+    color:black;
+    font-size:15px;
+    width:75px;
+    height:25px;
+}
+.studentConsult_list_cntnt_item{
+    /* height:50px; */
+    border-bottom: 1px solid black;
+}
+.studentConsult_list_cntnt_item:last-child{
+    /* height:50px; */
+    border-bottom: none;
+}
+.studentConsult_total_text{
+    /* height:250px; */
+    float:left;
+    height:30px;
+    padding-left:60px;
+    line-height:50px;
+}
+.studentConsult_total_cnt{
+    /* height:250px; */
+    float:right;
+    height:30px;
+    padding-right:70px;
+    line-height:50px;
+}
+
+.studentConsult_list_header{
+    margin: 0 auto;
+}
+.studentConsult_list_header{
+    width:800px;
+    height:50px;
+    text-align: center;
+    /* margin-left:60px; */
+}
+.studentConsult_list_body{
+    width: 800px;
+    height:350px;
+    padding:10px;
+    overflow-y: auto;
+    margin: 0 auto;
+    border-top: 2px solid gray;
+    border-bottom: 2px solid gray;
+}
+
+.studentConsult_table_h > tr > th{
+    width:800px;
+    line-height:50px;
+}
+
+.studentConsult_table_b > tr{
+    border-top: 1px solid gray;
+    border-bottom: 1px solid gray;
+}
+.studentConsult_table_b > tr:first-child{
+    border-top:none;
+}
+.studentConsult_table_b > tr:last-child{
+    border-bottom:none;
+}
+.studentConsult_table_b > tr > td{
+    line-height:50px;
+    height:50px;
+}
+.studentConsult_table_b > tr > td > button.wait{
+    margin:10px;
+    width:100px;
+    height:30px;
+    background-color: orange;
+    font-size:15px;
+    color:#fff;
+}
+.studentConsult_table_b > tr > td > button.done{
+    margin:10px;
+    width:100px;
+    height:30px;
+    background-color: lightgray;
+    font-size:15px;
+    color:#000;
+}

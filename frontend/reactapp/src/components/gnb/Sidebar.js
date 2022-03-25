@@ -83,9 +83,9 @@ const Sidebar = () => {
                   <span>출석관리</span>
                   </SidebarSpan>
                 <ul className="sub" name="linkUrl" >
-                <li to='/manage/attend/qrManage'>- QR 관리</li>
-                <li>- 입퇴실인원 현황</li>
-                <li to='/manage/attend/attendState'>- 출석확인</li>
+                <li className="pointer" to='/manage/attend/qrManage'>- QR 관리</li>
+                <li className="pointer" to='/manage/attend/checkInOut'>- 입퇴실인원 현황</li>
+                <li className="pointer" to='/manage/attend/attendState'>- 출석확인</li>
                 </ul>
             </li>
             <li  className={active["student"] ? "active contents" :"contents"}  id="student">
@@ -94,10 +94,10 @@ const Sidebar = () => {
                   <span>수강생관리</span>
             </SidebarSpan>
             <ul className="sub" name="linkUrl" >
-                <li to='/manage/student/studentManage'>- 입교생 관리카드</li>
-                <li to='/manage/student/academicAchieve'>- 학습성취도</li>
-                <li to='/manage/student/completeProcess'>- 수료처리</li>
-                <li to='/manage/student/studentConsult'>- 수강생 상담</li>
+                <li className="pointer" to='/manage/student/studentManage'>- 입교생 관리카드</li>
+                <li className="pointer" to='/manage/student/academicAchieve'>- 학습성취도</li>
+                <li className="pointer" to='/manage/student/completeProcess'>- 수료처리</li>
+                <li className="pointer" to='/manage/student/studentConsult'>- 수강생 상담</li>
               </ul>
             </li>
             <li  className={active["lecture"] ? "active contents" :"contents"}  id="lecture" >
@@ -106,9 +106,9 @@ const Sidebar = () => {
                   <span>강의관리</span>
               </SidebarSpan>
               <ul className="sub" name="linkUrl" >
-                <li to='/manage/lecture/liveLecture'>- 실시간 강의</li>
-                <li to='/manage/lecture/recordLecture'>- 녹화 강의</li>
-                <li to='/manage/lecture/createLecture'>- 강의 개설</li>
+                <li className="pointer" to='/manage/lecture/liveLecture'>- 실시간 강의</li>
+                <li className="pointer" to='/manage/lecture/recordLecture'>- 녹화 강의</li>
+                <li className="pointer" to='/manage/lecture/createLecture'>- 강의 개설</li>
               </ul>
             </li>
             <li  className={active["learning"] ? "active contents" :"contents"}  id="learning" >
@@ -116,9 +116,9 @@ const Sidebar = () => {
               <NavIcon src='/images/gnb/learning_icon.png' /> 
                   <span>학습자료</span>
               </SidebarSpan>
-            <ul className="sub" name="linkUrl" >
-                <li to='/manage/learn/lectureData'>- 강의자료</li>
-                <li to='/manage/learn/report'>- 과제</li>
+              <ul className="sub" name="linkUrl" >
+                <li className="pointer" to='/manage/learn/lectureData'>- 강의자료</li>
+                <li className="pointer" to='/manage/learn/report'>- 과제</li>
               </ul>
             </li>
           </SidebarWrapUl>
