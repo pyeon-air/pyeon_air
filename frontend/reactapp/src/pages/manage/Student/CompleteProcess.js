@@ -37,11 +37,11 @@ const Mypage = () => {
     useEffect(() =>{
 
         // 체크박스 전체 선택/해제
-        $('#attendState_monthly_check_all').on('click',function(){
+        $('#completeProcess_monthly_check_all').on('click',function(){
             if( $(this).prop('checked') )
-                $('.attendState_monthly_check').prop('checked',true);
+                $('.completeProcess_monthly_check').prop('checked',true);
             else
-                $('.attendState_monthly_check').prop('checked',false);
+                $('.completeProcess_monthly_check').prop('checked',false);
         });
     })
 
@@ -55,7 +55,7 @@ const Mypage = () => {
             </div>
             <div className='content'>
                 <Header />
-                <div className="attendState_wrap">
+                <div className="completeProcess_wrap">
                     <div>
                         <div className="completeProcess debug">
                             <div className="completeProcess_list_header debug">
@@ -70,7 +70,7 @@ const Mypage = () => {
                                     <thead className="completeProcess_table_h">
                                         <tr>
                                             <th>
-                                                <input id="attendState_monthly_check_all" name="attendState_monthly_check" type="checkbox"/>
+                                                <input id="completeProcess_monthly_check_all" name="completeProcess_monthly_check" type="checkbox"/>
                                             </th>
                                             <th>
                                                 <span>수강생 코드<span>↑</span><span>↓</span></span>
@@ -99,77 +99,77 @@ const Mypage = () => {
                                     </colgroup>
                                     <tbody className="completeProcess_table_b">
                                         <tr>
-                                            <td><input className="attendState_monthly_check" type="checkbox"/></td>
+                                            <td><input className="completeProcess_monthly_check" type="checkbox"/></td>
                                             <td>Y0322</td>
                                             <td>이주연</td>
                                             <td></td>
                                             <td><button className="pointer wait">수료</button></td>
                                         </tr>
                                         <tr>
-                                            <td><input className="attendState_monthly_check" type="checkbox"/></td>
+                                            <td><input className="completeProcess_monthly_check" type="checkbox"/></td>
                                             <td>Y0322</td>
                                             <td>이주연</td>
                                             <td></td>
                                             <td><button className="pointer wait">수료</button></td>
                                         </tr>
                                         <tr>
-                                            <td><input className="attendState_monthly_check" type="checkbox"/></td>
+                                            <td><input className="completeProcess_monthly_check" type="checkbox"/></td>
                                             <td>Y0322</td>
                                             <td>이주연</td>
                                             <td></td>
                                             <td><button className="pointer done">완료</button></td>
                                         </tr>
                                         <tr>
-                                            <td><input className="attendState_monthly_check" type="checkbox"/></td>
+                                            <td><input className="completeProcess_monthly_check" type="checkbox"/></td>
                                             <td>Y0322</td>
                                             <td>이주연</td>
                                             <td></td>
                                             <td><button className="pointer done">완료</button></td>
                                         </tr>
                                         <tr>
-                                            <td><input className="attendState_monthly_check" type="checkbox"/></td>
+                                            <td><input className="completeProcess_monthly_check" type="checkbox"/></td>
                                             <td>Y0322</td>
                                             <td>이주연</td>
                                             <td></td>
                                             <td><button className="pointer done">완료</button></td>
                                         </tr>
                                         <tr>
-                                            <td><input className="attendState_monthly_check" type="checkbox"/></td>
+                                            <td><input className="completeProcess_monthly_check" type="checkbox"/></td>
                                             <td>Y0322</td>
                                             <td>이주연</td>
                                             <td></td>
                                             <td><button className="pointer done">완료</button></td>
                                         </tr>
                                         <tr>
-                                            <td><input className="attendState_monthly_check" type="checkbox"/></td>
+                                            <td><input className="completeProcess_monthly_check" type="checkbox"/></td>
                                             <td>Y0322</td>
                                             <td>이주연</td>
                                             <td></td>
                                             <td><button className="pointer done">완료</button></td>
                                         </tr>
                                         <tr>
-                                            <td><input className="attendState_monthly_check" type="checkbox"/></td>
+                                            <td><input className="completeProcess_monthly_check" type="checkbox"/></td>
                                             <td>Y0322</td>
                                             <td>이주연</td>
                                             <td></td>
                                             <td><button className="pointer done">완료</button></td>
                                         </tr>
                                         <tr>
-                                            <td><input className="attendState_monthly_check" type="checkbox"/></td>
+                                            <td><input className="completeProcess_monthly_check" type="checkbox"/></td>
                                             <td>Y0322</td>
                                             <td>이주연</td>
                                             <td></td>
                                             <td><button className="pointer done">완료</button></td>
                                         </tr>
                                         <tr>
-                                            <td><input className="attendState_monthly_check" type="checkbox"/></td>
+                                            <td><input className="completeProcess_monthly_check" type="checkbox"/></td>
                                             <td>Y0322</td>
                                             <td>이주연</td>
                                             <td></td>
                                             <td><button className="pointer done">완료</button></td>
                                         </tr>
                                         <tr>
-                                            <td><input className="attendState_monthly_check" type="checkbox"/></td>
+                                            <td><input className="completeProcess_monthly_check" type="checkbox"/></td>
                                             <td>Y0322</td>
                                             <td>이주연</td>
                                             <td></td>
