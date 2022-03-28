@@ -1,5 +1,8 @@
 from django.contrib import admin
-from .models import InOutLog
-# Register your models here.
+from attendance import models
 
-admin.site.register(InOutLog)
+# Register your models here.
+admin.site.register(models.QrInfo)
+admin.site.register(models.InCheck)
+admin.site.register(models.OutCheck)
+admin.site.register(models.Attendance)

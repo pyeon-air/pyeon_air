@@ -33,15 +33,6 @@ ALLOWED_HOSTS = []
 # Application definition
 
 INSTALLED_APPS = [
-    'django.contrib.admin',
-    'django.contrib.auth',
-    'django.contrib.contenttypes',
-    'django.contrib.sessions',
-    'django.contrib.messages',
-    'django.contrib.staticfiles',
-    'corsheaders',
-    'drf_yasg',
-    'rest_framework',
     'frontend.apps.FrontendConfig',
     'member.apps.MemberConfig',
     'attendance.apps.AttendanceConfig',
@@ -50,7 +41,20 @@ INSTALLED_APPS = [
     'reference.apps.ReferenceConfig',
     'assignment.apps.AssignmentConfig',
     'notice.apps.NoticeConfig',
-    'rest_framework_jwt'
+
+    'corsheaders',
+    'drf_yasg',
+    'rest_framework',
+    'qrcode',
+    'rest_framework_jwt',
+    'django_extensions',
+
+    'django.contrib.admin',
+    'django.contrib.auth',
+    'django.contrib.contenttypes',
+    'django.contrib.sessions',
+    'django.contrib.messages',
+    'django.contrib.staticfiles',
 ]
 
 MIDDLEWARE = [
@@ -101,6 +105,15 @@ DATABASES = {
 
 # Password validation
 # https://docs.djangoproject.com/en/3.2/ref/settings/#auth-password-validators
+
+
+SWAGGER_SETTINGS = {
+    'SECURITY_DEFINITIONS' : {
+        'basic' : {
+            'type' : 'basic'
+        }
+    }
+}
 
 
 AUTH_PASSWORD_VALIDATORS = [
@@ -183,6 +196,10 @@ USE_TZ = True
 # https://docs.djangoproject.com/en/3.2/howto/static-files/
 
 STATIC_URL = '/static/'
+
+# Media files
+MEDIA_URL = '/media/'
+MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
 
 # Default primary key field type
 # https://docs.djangoproject.com/en/3.2/ref/settings/#default-auto-field

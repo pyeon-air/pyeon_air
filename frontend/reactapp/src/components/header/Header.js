@@ -7,7 +7,7 @@ import $, { isFunction } from "jquery"
 const HeaderWrap = styled.div`
 background-color: #ffffff;
 border-radius: 40px;
-width: calc(1200px - 200px);
+max-width: 1200px;
 height: 80px;
 box-shadow: 0px 5px 4.75px 0.25px rgba(0, 0, 0, 0.05);
 margin: 0 auto;
