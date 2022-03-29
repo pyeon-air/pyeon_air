@@ -344,9 +344,9 @@ function getDataChannels(){
 
     for(peerUsername in mapPeers){
         var datachannel = mapPeers[peerUsername][1];
-
+    
         datachannels.push(datachannel);
     }
-
+    console.log(datachannels);
     return datachannels;
 }

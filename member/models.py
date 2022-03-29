@@ -29,5 +29,5 @@ class Companylist(models.Model):
     company_id = models.AutoField(primary_key = True, null = False, unique = True)
     company_name = models.CharField(null = False, max_length=20,unique = True)
 
-    def __str(self):
+    def __str__(self):
         return self.company_name
