@@ -60,7 +60,7 @@ a{
     margin: 0 auto;
     width:900px;
     height:650px;
-    border-radius: 0 30px 30px 30px;
+    border-radius: 30px 30px 30px 30px;
     background-color: #fff;
     padding:30px;
 }
@@ -130,4 +130,207 @@ a{
     background-color: lightgray;
     font-size:15px;
     color:#000;
+}
+
+/* 팝업 투명배경 */
+.popupBackgroundWrap{
+    position: absolute;
+    top:0;
+    left:0;
+    width:100%;
+    height:100%;
+    z-index:2;
+    background-color: gray;
+    opacity: 0.5;
+}
+
+/* 입교생 추가 팝업 */
+.studentInsertPopup{
+    
+    position: fixed;
+    left: 50%;
+    top: 50%;
+    z-index: 3;
+    width: 650px;
+    height: 450px;
+    margin-top:-250px;
+    margin-left:-200px;
+
+    /*style*/
+    background: white;
+    /* border: 1px solid #d1d8dd; */
+    box-shadow: 0 0 6px 1px rgb(0 0 0 / 30%);
+    border-radius: 1rem;
+}
+.studentInsertHeader{
+    width:100%;
+    height:50px;
+    background: gray;
+    /* box-shadow: 0 0 6px 0px rgb(0 0 0 / 100%); */
+    border-radius: 1rem 1rem 0 0;
+    display:flex;
+    justify-content: space-between;
+    line-height:50px;
+    color:white;
+    padding: 0 30px;
+}
+.studentInsertHeader > img{
+    width:50px;
+    height:50px;
+}
+.studentInsertBody {
+    padding: 30px;
+}
+.studentInsertBody > div:nth-child(1) {
+    margin-bottom:20px;
+    font-weight: bold;
+}
+.studentInsertBody > div:nth-child(2) {
+    width:100%;
+    height:100px;
+    background-color: #e0e0e0;
+    border-radius: 0.5rem;
+    padding:20px;
+    margin-bottom:30px;
+}
+.studentInsertBody > div:nth-child(2) > div:nth-child(1) {
+    display:flex;
+    justify-content: space-between;
+    margin-bottom:20px;
+}
+.studentInsertBody > div:nth-child(2) > div:nth-child(2) {
+    display:flex;
+    justify-content: space-between;
+}
+.studentInsertBody > div:nth-child(2) > div:nth-child(2) > input{
+    width:500px;
+}
+.studentInsertBody > div:nth-child(2) label{
+    color: gray;
+    margin: 2px auto;
+}
+.studentInsertBody > div:nth-child(2) input{
+    padding:2px 2px 2px 5px;
+    margin: 0 auto;
+}
+.studentInsertBody > div:nth-child(3) {
+    margin-bottom:20px;
+    font-weight: bold;
+}
+.studentInsertBody > div:nth-child(4) {
+    margin-bottom:20px;
+    width:100%;
+    height:100px;
+    border: 1px solid #e0e0e0;
+    border-radius: 0.5rem;
+    text-align:center;
+    color: gray;
+    line-height:100px;
+}
+.studentInsertBody > div:nth-child(5) > button {
+    background-color: white;
+    color: orange;
+    border:1px solid orange;
+    width:100px;
+    height:30px;
+    font-size:15px;
+    float :right;
+}
+
+/* 입교생 관리카드 팝업 */
+.studentDetailPopup{
+    position: fixed;
+    left: 50%;
+    top: 50%;
+    z-index: 3;
+    width: 650px;
+    height: 480px;
+    margin-top:-250px;
+    margin-left:-200px;
+
+    /*style*/
+    background: white;
+    /* border: 1px solid #d1d8dd; */
+    box-shadow: 0 0 6px 1px rgb(0 0 0 / 30%);
+    border-radius: 1rem;
+}
+.studentDetailHeader{
+    width:100%;
+    height:50px;
+    background: gray;
+    /* box-shadow: 0 0 6px 0px rgb(0 0 0 / 100%); */
+    border-radius: 1rem 1rem 0 0;
+    display:flex;
+    justify-content: space-between;
+    line-height:50px;
+    color:white;
+    padding: 0 30px;
+}
+.studentDetailHeader > img{
+    width:50px;
+    height:50px;
+}
+.studentDetailBody {
+    padding: 30px;
+}
+.studentDetailBody > div:nth-child(1) {
+    margin-bottom:20px;
+    font-weight: bold;
+}
+
+.studentDetailInfo{
+    overflow-y:auto;
+    width:70%;
+    float:right;
+}
+.studentDetailInfo > table{
+    width:100%;
+    border:1px solid #e0e0e0;
+    margin-bottom:20px;
+}
+.studentDetailInfo > table > thead {
+    background-color:  #a0a0a0;
+    text-align:left;
+}
+.studentDetailInfo > table > thead > tr > th{
+    border:1px solid #e0e0e0;
+    padding:5px;
+}
+.studentDetailInfo > table > tbody > tr > td:not(.notSort){
+    border:1px solid #e0e0e0;
+    padding:5px;
+    text-align: center;
+}
+.studentDetailInfo > table > tbody > tr > td.notSort{
+    border:1px solid #e0e0e0;
+    padding:5px;
+}
+
+.studentDetailTbl{
+    overflow-y:auto;
+    margin-bottom:20px;
+    width:100%;
+    height:180px;
+}
+.studentDetailTbl > table{
+    width:100%;
+    border:1px solid #e0e0e0;
+    margin-bottom:20px;
+}
+.studentDetailTbl > table > thead {
+    background-color:  #a0a0a0;
+    text-align:left;
+}
+.studentDetailTbl > table > thead > tr > th{
+    border:1px solid #e0e0e0;
+    padding:5px;
+}
+.studentDetailTbl > table > tbody > tr > td:not(.notSort){
+    border:1px solid #e0e0e0;
+    padding:5px;
+    text-align: center;
+}
+.studentDetailTbl > table > tbody > tr > td.notSort{
+    border:1px solid #e0e0e0;
+    padding:5px;
 }

@@ -39,10 +39,10 @@ const Mypage = () => {
                 </div>
             </div>
             <div className='content'>
-                <div className="dashboard_wrap debug">
+                <div className="dashboard_wrap ">
                     <Header />
-                    <div className="dashboard_card debug">
-                        <div className="dashboard_card_1 debug">
+                    <div className="dashboard_card ">
+                        <div className="dashboard_card_1 ">
                             <div className="dashboard_card_1_area1">
                                 <span>2022.03.21</span>
                                 <span>과정명 : </span>
@@ -70,20 +70,20 @@ const Mypage = () => {
                                 </div>
                             </div>
                         </div>
-                        <div className="dashboard_card_2 debug">
+                        <div className="dashboard_card_2 ">
                             <div className="dashboard_card_2_area1">
                                 <span>과정명 : </span>
                                 <span>파이썬 기초</span>
                             </div>
                         </div>
-                        <div className="dashboard_card_3 debug">
+                        <div className="dashboard_card_3 ">
                             <div className="dashboard_card_3_area1">
                                 <span>진행중인상담</span>
                                 <div></div>
                                 <div></div>
                             </div>
                         </div>
-                        <div className="dashboard_card_4 debug">
+                        <div className="dashboard_card_4 ">
                             <div className="dashboard_card_4_area1">
                                 <div className="dashboard_card_4_area1_title">
                                     <span>강의명 : </span>
